@@ -1,1 +1,3 @@
-test 
+
+probleme avec le cache de composer donc clear cache et ensuite reinstall composer : 
+composer install
