@@ -4,14 +4,66 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
-
+        <link href="https://bootswatch.com/5/litera/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Mon CV
+                    <span class="visually-hidden">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Mes Projets</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Loisirs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Autres</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
         {% block body %}{% endblock %}
+        
+        <footer class="footer-custom bg-dark text-center text-white">
+          <div class="p-4 pb-0">
+            <section class="mb-4">
+              <a class="btn btn-outline-light btn-floating m-1" href="#" role="button" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#" role="button" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a class="btn btn-outline-light btn-floating m-1" href="#" role="button" title="GitHub"><i class="fab fa-github"></i></a>
+            </section>
+          </div>
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Site Web de Dimitri Bacot - Mon Portfolio   
+          </div>
+        </footer>
     </body>
 </html>
