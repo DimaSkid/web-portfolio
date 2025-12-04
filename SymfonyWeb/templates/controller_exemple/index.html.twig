@@ -14,42 +14,55 @@
 <div class="example-wrapper">
     <h1>Bienvenue sur mon E-Portfolio </h1>
     <text>Découvrez tout mon parcours en un rien de temps,il suffit juste de scroller</text>
-
-
 </div>
+
 <div class="conteneur1">
-<div class="minicont1">Mes raisons de suivre cette voie</div>
-<div class="minicont1">Je suis quelqu'un de très curieux, le numérique j'y touche depuis tout petit donc ca m'a favorisé sur cette voie</div>
+    <div class="minicont1">Mes raisons de suivre cette voie</div>
+    <div class="minicont1">Je suis quelqu'un de très curieux, le numérique j'y touche depuis tout petit donc ca m'a favorisé sur cette voie</div>
+    </div>
+<div>
+    <div>
+    <a >En dehors de mes études j'ai quelques loisirs qui me prennent mon temps</a>
+    </div>
+    <div class="loisirscont">
+    <div class="container">
+        <img src="{{ asset('telephone.webp') }}" alt="reparation de téléphone " class="image" >
+        <div class="overlay">
+    <div class="text">Réparation de téléphone</div>
+  </div></img></div>
+  <div class="container">
+        <img src="{{ asset('osintctf.png') }}" alt="Image Osint CTF" class="image">
+        <div class="overlay">
+    <div class="text">CTF en Osint</div>
+  </div></img></div>
+    <div class="container">
+        <img src="{{ asset('rdr2.jpg') }}" alt="Exemple de Jeu Red Dead Redemption 2" class="image" />
+        <div class="overlay">
+    <div class="text">Gaming</div>
+  </div></img></div>
 </div>
-<div></div>
 <div class="contparc">
-<div class="miniparc1">
-<h4>Mon parcours Scolaire
-</h4>
-</div>
-<div class="miniparc1">
+    <div class="miniparc1">
+    <h4>Mon parcours Scolaire</h4>
+    </div>
 
-<div class="ecole">
-<img src="{{ asset('lamartine.png') }}" alt="Lycée Lamartine" class="imgparc" />
-<a>Lycée Lamartine 2020 - 2023
-</a>
-<a>Avec Nsi et Maths j'ai appris beaucoup sur les bases du dév.
-</a>
+<div class="miniparc1">
+    <div class="ecole">
+    <img src="{{ asset('lamartine.png') }}" alt="Lycée Lamartine" class="imgparc" />
+    <a>Lycée Lamartine 2020 - 2023</a>
+    <a>Avec Nsi et Maths j'ai appris beaucoup sur les bases du dév.</a>
+</div>
+    <div class="ecole">
+    <img src="{{ asset("guardia.jpg")}}" alt="Ecole Guardia" class="imgparc">
+    <a>Guardia Cybersecurity Shool 2024 - 2025</a>
+<a>Post Bac,j'ai appris des choses dans le domaine de la programmation, réseaux </a>
 </div>
 <div class="ecole">
-<img src="{{ asset("guardia.jpg")}}" alt="Ecole Guardia" class="imgparc">
-<a>Guardia Cybersecurity Shool 2024 - 2025
-</a>
-<a>Post Bac,j'ai appris des choses dans le domaine de la programmation, réseaux 
-</a>
+    <img src="{{ asset("iutroanne.webp")}}" alt="Iut de Roanne" class="imgparc">
+    <a>Lycée Lamartine 2025 - 2028</a>
+    <a>Ayant découvert le réseaux je me suis incris à cette école</a>
 </div>
-<div class="ecole">
-<img src="{{ asset("iutroanne.webp")}}" alt="Iut de Roanne" class="imgparc">
-<a>Lycée Lamartine 2025 - 2028
-</a>
-<a>Ayant découvert le réseaux je me suis incris à cette école
-</a>
-</div>
+
 </div>
 </div>
 {% endblock %}
