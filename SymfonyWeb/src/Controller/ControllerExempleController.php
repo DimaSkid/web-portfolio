@@ -15,4 +15,10 @@ final class ControllerExempleController extends AbstractController
             'controller_name' => 'ControllerExempleController',
         ]);
     }
+
+    #[Route('/Contact', name: 'app_contact')]
+    public function contact(): Response
+    {
+        return $this->render('controller_exemple/contact.html.twig');
+    }
 }

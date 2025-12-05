@@ -10,37 +10,89 @@
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
-
-<div class="example-wrapper">
-    <h1>Bienvenue sur mon E-Portfolio </h1>
-    <text>Découvrez tout mon parcours en un rien de temps,il suffit juste de scroller</text>
-</div>
-
-<div class="conteneur1">
-    <div class="minicont1">Mes raisons de suivre cette voie</div>
-    <div class="minicont1">Je suis quelqu'un de très curieux, le numérique j'y touche depuis tout petit donc ca m'a favorisé sur cette voie</div>
+<!-- Introduction stylée (re-design) -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-left">
+            <h1>Bonjour, je suis étudiant en Cybersécurité & Développement</h1>
+            <p class="hero-text">Je crée des projets orientés sécurité et applications web. Ici vous trouverez mon parcours, mes compétences et des projets concrets — y compris mes loisirs transformés en petits projets pratiques.</p>
+            <div class="hero-ctas">
+                <a class="btn primary" href="#competences">Voir mes compétences</a>
+                <a class="btn ghost" href="#projects">Voir mes projets</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-card">
+                <div class="card-title">Disponible pour alternance</div>
+                <div class="card-body">Compétences : JS • Python • Réseaux • Pentesting</div>
+            </div>
+        </div>
     </div>
-<div>
-    <div>
-    <a >En dehors de mes études j'ai quelques loisirs qui me prennent mon temps</a>
+</section>
+
+<main class="main-content">
+    <div class="conteneur1">
+        <div class="minicont1">Mes raisons de suivre cette voie</div>
+        <div class="minicont1">Je suis quelqu'un de très curieux, le numérique j'y touche depuis tout petit donc ça m'a favorisé sur cette voie</div>
     </div>
-    <div class="loisirscont">
-    <div class="container">
-        <img src="{{ asset('telephone.webp') }}" alt="reparation de téléphone " class="image" >
-        <div class="overlay">
-    <div class="text">Réparation de téléphone</div>
-  </div></img></div>
-  <div class="container">
-        <img src="{{ asset('osintctf.png') }}" alt="Image Osint CTF" class="image">
-        <div class="overlay">
-    <div class="text">CTF en Osint</div>
-  </div></img></div>
-    <div class="container">
-        <img src="{{ asset('rdr2.jpg') }}" alt="Exemple de Jeu Red Dead Redemption 2" class="image" />
-        <div class="overlay">
-    <div class="text">Gaming</div>
-  </div></img></div>
-</div>
+
+    <!-- Compétences : affichage sans pourcentages -->
+    <section id="competences" class="competences">
+        <h2>Compétences</h2>
+        <div class="grille-competences">
+            <div class="carte-competence">
+                <div class="nom-competence">HTML / CSS</div>
+                <div class="niveau-competence">Avancé</div>
+            </div>
+            <div class="carte-competence">
+                <div class="nom-competence">JavaScript</div>
+                <div class="niveau-competence">Intermédiaire</div>
+            </div>
+            <div class="carte-competence">
+                <div class="nom-competence">Python</div>
+                <div class="niveau-competence">Intermédiaire</div>
+            </div>
+            <div class="carte-competence">
+                <div class="nom-competence">Réseaux / Sécurité</div>
+                <div class="niveau-competence">Avancé</div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects">
+        <h2>Projets & Loisirs</h2>
+        <div class="carousel">
+            <button class="carousel-control prev" aria-label="Précédent">‹</button>
+            <div class="slides">
+                <article class="slide">
+                    <img src="{{ asset('telephone.webp') }}" alt="Réparation téléphone"/>
+                    <div class="slide-body">
+                        <h3>Réparation de téléphones</h3>
+                        <p>Projet perso que j'ai réalisé micro-réparations et diagnostic matériel </p>
+                    </div>
+                </article>
+                <article class="slide">
+                    <img src="{{ asset('osintctf.png') }}" alt="CTF Osint"/>
+                    <div class="slide-body">
+                        <h3>CTF / OSINT</h3>
+                        <p>Participation à des challenges OSINT </p>
+                    </div>
+                </article>
+                <article class="slide">
+                    <img src="{{ asset('rdr2.jpg') }}" alt="Gaming"/>
+                    <div class="slide-body">
+                        <h3>Gaming </h3>
+                        <p>Bien que j'ai des cours et plus de travail je joue de tant en tant à des jeux pour me divertir</p>
+                    </div>
+                </article>
+            </div>
+            <button class="carousel-control next" aria-label="Suivant">›</button>
+        </div>
+    </section>
+
+</main>
+
+<!-- Charger le script local (géré par Webpack/Encore si vous l'utilisez) -->
+<script src="{{ asset('build/app.js') }}"></script>
 <div class="contparc">
     <div class="miniparc1">
     <h4>Mon parcours Scolaire</h4>
@@ -65,4 +117,5 @@
 
 </div>
 </div>
+
 {% endblock %}

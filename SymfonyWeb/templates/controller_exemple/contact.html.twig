@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez moi{% endblock %}
+
+{% block body %}
+    <div class="contact-container">
+        <h1>Contactez-moi</h1>
+        <p>Vous pouvez me joindre par e-mail ou téléphone. Je serai heureux de vous répondre rapidement.</p>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i> 
+                <a class="contact-link" href="mailto:bacotdimitri@gmail.com">bacotdimitri@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <a class="contact-link" href="tel:+33750575987">07 50 57 59 87</a>
+            </div>
+        </div>
+    </div>
+{% block stylesheets %}
+    <style>
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin-top:5%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Conteneur des infos de contact */
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #333;
+        }
+
+        /* Icônes de contact */
+        .contact-item i {
+            font-size: 1.8rem;
+            color: #007BFF;
+            margin-right: 10px;
+        }
+
+        /* Style des liens de contact */
+        .contact-link {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        /* Effet de survol des liens */
+        .contact-link:hover {
+            color: #0056b3;
+        }
+
+        /* Réactivité */
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+    </style>
+    <!-- Inclusion de la librairie Font Awesome pour les icônes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+{% endblock %}
+{% endblock %}
