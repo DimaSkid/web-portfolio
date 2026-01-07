@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Projets{% endblock %}
+
+{% block body %}
+<section class="projets-page">
+    <h1>Mes Projets</h1>
+    <p class="projets-intro">Voici une sélection de projets réalisés en autonomie ou dans le cadre de mes études, illustrant mes compétences en développement, cybersécurité et créativité technique.</p>
+    <div class="projets-grid">
+        <article class="projet-card">
+            <img src="{{ asset('telephone.webp') }}" alt="Réparation téléphone" />
+            <div class="projet-body">
+                <h3>Réparation de téléphones <span class="badge badge-info">Tech</span></h3>
+                <p><strong>Objectif :</strong> Diagnostiquer et réparer des smartphones (changement d’écran, batterie, connecteurs).<br>Apprentissage de la micro-soudure et gestion de stocks de pièces détachées.</p>
+                <ul>
+                    <li>Utilisation d’outils professionnels (iFixit, stations de soudure)</li>
+                    <li>Création d’un mini-guide de diagnostic</li>
+                </ul>
+            </div>
+        </article>
+        <article class="projet-card">
+            <img src="{{ asset('osintctf.png') }}" alt="CTF / OSINT" />
+            <div class="projet-body">
+                <h3>CTF / OSINT <span class="badge badge-success">Cybersécurité</span></h3>
+                <p><strong>Objectif :</strong> Résoudre des challenges de type Capture The Flag (CTF) et OSINT.<br>Recherche d’informations, analyse de traces numériques, rédaction de write-ups.</p>
+                <ul>
+                    <li>Participation à des compétitions (Root-Me, TryHackMe)</li>
+                    <li>Automatisation de recherches avec Python</li>
+                </ul>
+            </div>
+        </article>
+        <article class="projet-card">
+            <img src="{{ asset('rdr2.jpg') }}" alt="Projet loisir / dev" />
+            <div class="projet-body">
+                <h3>Bot Discord <span class="badge badge-primary">Développement</span></h3>
+                <p><strong>Objectif :</strong> Créer un bot Discord pour automatiser la modération et proposer des mini-jeux à une communauté.<br>Utilisation de Node.js et de l’API Discord.</p>
+                <ul>
+                    <li>Gestion des rôles et permissions</li>
+                    <li>Déploiement sur un VPS Linux</li>
+                </ul>
+            </div>
+        </article>
+        <article class="projet-card">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Portfolio Web" />
+            <div class="projet-body">
+                <h3>Portfolio Web <span class="badge badge-warning">Web</span></h3>
+                <p><strong>Objectif :</strong> Développer un site portfolio responsive pour présenter mes compétences et projets.<br>Stack : Symfony, Twig, CSS moderne.</p>
+                <ul>
+                    <li>Design personnalisé et animations CSS</li>
+                    <li>Déploiement sur GitHub Pages</li>
+                </ul>
+            </div>
+        </article>
+        <!-- Exemple supplémentaire -->
+        <article class="projet-card">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Script Python" />
+            <div class="projet-body">
+                <h3>Script Python d’automatisation <span class="badge badge-dark">Python</span></h3>
+                <p><strong>Objectif :</strong> Automatiser la sauvegarde de fichiers et l’envoi d’alertes par mail.<br>Utilisation de cron, smtplib et logging.</p>
+                <ul>
+                    <li>Gestion d’erreurs et logs détaillés</li>
+                    <li>Documentation et tutoriel pour les utilisateurs</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}

@@ -3,3 +3,41 @@
     position: fixed;
     bottom: 0px;
 }
+
+body.night-mode {
+    background: #181a1b !important;
+    color: #e0e0e0 !important;
+}
+
+.night-mode .hero-card,
+.night-mode .real-card,
+.night-mode .loisir-card,
+.night-mode .ecole {
+    background: #23272b !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+.night-mode .toggle-theme-btn {
+    background: #23272b;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+.toggle-theme-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: #fff;
+    color: #222;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+body {
+    transition: background 0.3s, color 0.3s;
+}

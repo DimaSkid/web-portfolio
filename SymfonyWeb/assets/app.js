@@ -48,4 +48,24 @@ console.log('assets/app.js initialisé — carousel & animations prêts');
 		car.addEventListener('mouseleave', ()=>{ startAuto(); });
 	});
 
+	// --- Mode jour/nuit ---
+	const themeBtn = document.getElementById('toggle-theme');
+	if (themeBtn) {
+	    // Appliquer le thème sauvegardé au chargement
+	    if (localStorage.getItem('theme') === 'night') {
+	        document.body.classList.add('night-mode');
+	        themeBtn.textContent = '☀️ Mode Jour';
+	    }
+	    themeBtn.addEventListener('click', function() {
+	        const isNight = document.body.classList.toggle('night-mode');
+	        if (isNight) {
+	            localStorage.setItem('theme', 'night');
+	            themeBtn.textContent = '☀️ Mode Jour';
+	        } else {
+	            localStorage.setItem('theme', 'day');
+	            themeBtn.textContent = '🌙 Mode Nuit';
+	        }
+	    });
+	}
+
 });

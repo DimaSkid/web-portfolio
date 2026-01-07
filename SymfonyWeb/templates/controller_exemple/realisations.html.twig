@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes mes réalisations{% endblock %}
+
+{% block body %}
+<section class="realisations">
+    <h1>Toutes mes réalisations</h1>
+    <p class="realisations-intro">Retrouvez ici l'ensemble de mes projets et SAE, avec plus de détails, d'exemples et de contexte sur chaque expérience.</p>
+    <div class="realisations-grid">
+        <article class="real-card sae">
+            <img src="{{ asset('osintctf.png') }}" alt="SAE1.01 : Hygiène informatique & cybersécurité" />
+            <div class="real-body">
+                <h3>SAE1.01 : Hygiène informatique & cybersécurité <span class="badge badge-sae">SAE</span></h3>
+                <p><strong>Contexte :</strong> Découverte des enjeux de la cybersécurité à travers le MOOC ANSSI (SecNumAcadémie).<br>
+                <strong>Livrables :</strong> Attestation de réussite, diaporama sur les vulnérabilités, présentation orale 10min.<br>
+                <strong>Outils :</strong> Plateforme ANSSI, PowerPoint.<br>
+                <strong>Compétences :</strong> Analyse de risques, vulgarisation, sensibilisation.</p>
+                <ul><li>Présentation orale devant la classe</li><li>Travail en autonomie</li><li>Exemples d'attaques réelles étudiées</li></ul>
+            </div>
+        </article>
+        <article class="real-card sae">
+            <img src="{{ asset('telephone.webp') }}" alt="SAE12 : S'initier aux réseaux informatiques" />
+            <div class="real-body">
+                <h3>SAE12 : S'initier aux réseaux informatiques <span class="badge badge-sae">SAE</span></h3>
+                <p><strong>Contexte :</strong> Premiers pas dans la configuration réseau (IP, routage, matériel).<br>
+                <strong>Livrables :</strong> Fiches de configuration, schémas réseau.<br>
+                <strong>Outils :</strong> Matériel Cisco, Packet Tracer.<br>
+                <strong>Compétences :</strong> Câblage, adressage, diagnostic.</p>
+                <ul><li>Manipulation de switchs et routeurs</li><li>Travail en binôme</li></ul>
+            </div>
+        </article>
+        <article class="real-card sae">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="SAE Portfolio Web" />
+            <div class="real-body">
+                <h3>SAE Portfolio Web personnel <span class="badge badge-sae">SAE</span></h3>
+                <p><strong>Contexte :</strong> Réalisation d’un portfolio web pour valoriser mon parcours et mes compétences.<br>
+                <strong>Livrables :</strong> Site en ligne, documentation, présentation orale.<br>
+                <strong>Outils :</strong> Symfony, Twig, CSS, GitHub Pages.<br>
+                <strong>Compétences :</strong> UX/UI, responsive, rédaction, SEO.</p>
+                <ul><li>Design personnalisé</li><li>Animations CSS</li><li>Présentation devant jury</li></ul>
+            </div>
+        </article>
+        <article class="real-card sae">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="SAE 1.03 Couverture Wifi" />
+            <div class="real-body">
+                <h3>SAE 1.03 : Mesure de couverture wifi & infrastructure <span class="badge badge-sae">SAE</span></h3>
+                <p><strong>Contexte :</strong> Missions autour de l’infrastructure réseaux de l’IUT de Roanne.<br>
+                <strong>Livrables :</strong> Rapport de mesures, devis matériel, schémas de câblage, documentation technique.<br>
+                <strong>Outils :</strong> Logiciel de mesure wifi, Excel, matériel réseau.<br>
+                <strong>Compétences :</strong> Analyse terrain, recettage, gestion de projet.</p>
+                <ul><li>Mesures de couverture wifi sur site</li><li>Préconisations d’amélioration</li><li>Travail en équipe</li></ul>
+            </div>
+        </article>
+        <article class="real-card projet">
+            <img src="{{ asset('osintctf.png') }}" alt="CTF / OSINT" />
+            <div class="real-body">
+                <h3>CTF / OSINT <span class="badge badge-projet">Projet</span></h3>
+                <p><strong>Contexte :</strong> Participation à des challenges de cybersécurité (Root-Me, TryHackMe).<br>
+                <strong>Livrables :</strong> Write-ups, scripts Python.<br>
+                <strong>Outils :</strong> Python, outils OSINT, plateformes CTF.<br>
+                <strong>Compétences :</strong> Investigation, automatisation, rédaction technique.</p>
+                <ul><li>Résolution d’énigmes</li><li>Automatisation de recherches</li></ul>
+            </div>
+        </article>
+        <article class="real-card projet">
+            <img src="{{ asset('rdr2.jpg') }}" alt="Bot Discord" />
+            <div class="real-body">
+                <h3>Bot Discord <span class="badge badge-projet">Projet</span></h3>
+                <p><strong>Contexte :</strong> Développement d’un bot Discord pour une communauté.<br>
+                <strong>Livrables :</strong> Bot fonctionnel, documentation, tutoriel vidéo.<br>
+                <strong>Outils :</strong> Node.js, API Discord, VPS Linux.<br>
+                <strong>Compétences :</strong> API, automatisation, déploiement.</p>
+                <ul><li>Gestion des rôles</li><li>Mini-jeux intégrés</li></ul>
+            </div>
+        </article>
+        <article class="real-card projet">
+            <img src="{{ asset('telephone.webp') }}" alt="Réparation téléphone" />
+            <div class="real-body">
+                <h3>Réparation de téléphones <span class="badge badge-projet">Projet</span></h3>
+                <p><strong>Contexte :</strong> Micro-réparations et diagnostic matériel sur smartphones.<br>
+                <strong>Livrables :</strong> Guide de diagnostic, appareils réparés.<br>
+                <strong>Outils :</strong> iFixit, stations de soudure.<br>
+                <strong>Compétences :</strong> Analyse, minutie, documentation.</p>
+                <ul><li>Changement d’écran, batterie</li><li>Gestion de stock de pièces</li></ul>
+            </div>
+        </article>
+        <article class="real-card projet">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Projet site vitrine rémunéré" />
+            <div class="real-body">
+                <h3>Projet site vitrine rémunéré <span class="badge badge-projet">Projet</span></h3>
+                <p><strong>Contexte :</strong> Création d’un site web pour un client (auto-entrepreneur).<br>
+                <strong>Livrables :</strong> Site en ligne, facturation, support client.<br>
+                <strong>Outils :</strong> Symfony, Figma, Stripe, hébergement OVH.<br>
+                <strong>Compétences :</strong> Gestion de projet, relation client, design, SEO.</p>
+                <ul><li>Brief client, maquettes Figma</li><li>Développement, mise en production</li><li>Facturation et suivi</li></ul>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}

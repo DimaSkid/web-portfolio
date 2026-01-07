@@ -21,4 +21,28 @@ final class ControllerExempleController extends AbstractController
     {
         return $this->render('controller_exemple/contact.html.twig');
     }
+
+    #[Route('/sae-details', name: 'sae_details')]
+    public function saeDetails(): Response
+    {
+        return $this->render('controller_exemple/sae_details.html.twig');
+    }
+
+    #[Route('/projets', name: 'projets')]
+    public function projets(): Response
+    {
+        return $this->render('controller_exemple/projets.html.twig');
+    }
+
+    #[Route('/loisirs', name: 'loisirs')]
+    public function loisirs(): Response
+    {
+        return $this->render('controller_exemple/loisirs.html.twig');
+    }
+
+    #[Route('/realisations', name: 'realisations')]
+    public function realisations(): Response
+    {
+        return $this->render('controller_exemple/realisations.html.twig');
+    }
 }

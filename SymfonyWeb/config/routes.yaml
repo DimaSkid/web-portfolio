@@ -3,3 +3,11 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+sae_details:
+  path: /sae-details
+  controller: App\Controller\ControllerExempleController::saeDetails
+
+projets:
+  path: /projets
+  controller: App\Controller\ControllerExempleController::projets

@@ -23,7 +23,7 @@
         }
 
         footer.footer-custom {
-            position: fixed;
+            position: relative;
             bottom: 0;
             width: 100%;
             background-color: #343a40;
@@ -47,19 +47,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Mes Projets</a>
+                        <a class="nav-link" href="/realisations">Réalisations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Loisirs</a>
+                        <a class="nav-link" href="/loisirs">Loisirs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Contact">Contact</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-sm-2" type="search" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
@@ -67,13 +63,20 @@
     <div class="content">
         {% block body %}{% endblock %}
     </div>
-
-    <footer class="footer-custom bg-dark text-center text-white">
+<footer class="footer-custom bg-dark text-center text-white">
         <div class="p-4 pb-0">
             <section class="mb-4">
-                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a class="btn btn-outline-light btn-floating m-1" href="https://fr.linkedin.com/in/dimitri-bacot" role="button" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Dbacot" role="button" title="GitHub"><i class="fab fa-github"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="btn btn-outline-light btn-floating m-1"
+                   href="https://fr.linkedin.com/in/dimitri-bacot" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="btn btn-outline-light btn-floating m-1"
+                   href="https://github.com/Dbacot" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
             </section>
         </div>
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
