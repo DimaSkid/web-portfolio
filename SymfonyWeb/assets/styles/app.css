@@ -710,7 +710,6 @@ body {
   .real-card img { height: 200px; }
 }
 
-/* --- Loisirs page artistique (blanc, gris, noir, bordeaux) --- */
 .loisirs-page-art {
   max-width: 1200px;
   margin: 40px auto 60px auto;
@@ -830,3 +829,5 @@ body {
 @media (max-width: 900px) {
   .loisirs-art-grid { grid-template-columns: 1fr; }
 }
+
+
