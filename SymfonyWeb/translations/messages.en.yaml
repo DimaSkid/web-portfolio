@@ -56,6 +56,7 @@ sae:
     li2: "CSS animations"
     li3: "Presentation to a jury"
   sae103:
+    title: "SAE 1.03: Wifi Coverage"
     long: "Network infrastructure analysis and on-site wifi coverage measurement missions."
     li1: "On-site wifi coverage measurements"
     li2: "Improvement recommendations"
@@ -101,18 +102,24 @@ realisations:
 
 project:
   ctf:
-    long: "Participation in cybersecurity challenges and writing write-ups and automation scripts."
-    li1: "Solving puzzles"
-    li2: "Automating searches"
+    title: "DEPLOYMENT & LINUX SYSTEMS"
+    long: "AC11.06 - Installation, configuration and securing of virtualized client machines."
+    li1: "Virtualization: Deployment of isolated environments under Oracle VM VirtualBox (x86 Architecture, VDI and RAM management)."
+    li2: "Bash Administration: Command-line mastery of Linux (Ubuntu 24.04.3): permissions management (chmod/chown), file system and automation."
+    li3: "Network Connectivity: Interface configuration (NAT/Bridge), communication diagnostics (Ping, Traceroute) and DHCP/DNS services."
   bot:
-    long: "Development of a Discord bot to manage a community with automation features."
-    li1: "Role management"
-    li2: "Integrated mini-games"
+    title: "COLLABORATIVE WORK & PROJECT MANAGEMENT"
+    long: "AC13.06 - Team organization and synergy within a professional environment."
+    li1: "Agile Planning: Design of Gantt diagrams (MS Project) with critical task and margin management."
+    li2: "Collaborative Tools: Administration of shared workspaces (Google Drive, Canva) and code versioning via GitHub."
+    li3: "Technical Communication: Writing clear documentation and leading follow-up meetings to optimize workflow."
   repair:
+    title: "Phone Repair"
     long: "Micro-repairs and hardware diagnostics on smartphones, producing guides and documentation."
     li1: "Screen and battery replacement"
     li2: "Parts inventory management"
   web:
+    title: "Paid Showcase Website Project"
     long: "Delivering a website for a client, including design, development and production deployment."
     li1: "Client brief, Figma mockups"
     li2: "Development and deployment"

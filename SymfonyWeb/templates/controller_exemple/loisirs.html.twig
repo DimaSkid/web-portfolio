@@ -4,47 +4,47 @@
 
 {% block body %}
 <section class="loisirs-page-art">
-    <h1 class="loisirs-art-title" data-i18n="loisirs.title">Mes Loisirs <span class="art-dot">•</span></h1>
+    <h1 class="loisirs-art-title" data-i18n="loisirs.title">{{ 'loisirs.title'|trans }} <span class="art-dot">•</span></h1>
         <p class="loisirs-art-intro" data-i18n="loisirs.intro">{{ 'loisirs.intro'|trans }}</p>
     <div class="loisirs-art-grid">
         <article class="loisir-art-card">
             <img src="{{ asset('rdr2.jpg') }}" alt="Gaming" />
             <div class="loisir-art-overlay">
                 <span class="loisir-art-icon"><i class="fas fa-gamepad"></i></span>
-                <span class="loisir-art-text" data-i18n="loisirs.gaming.overlay">Univers immersifs, compétition, stratégie et fun !</span>
+                <span class="loisir-art-text" data-i18n="loisirs.gaming.overlay">{{ 'loisirs.gaming.overlay'|trans }}</span>
             </div>
             <div class="loisir-art-body">
-                <h3 data-i18n="loisirs.gaming.title">Gaming</h3>
-                <p data-i18n="loisirs.gaming.desc">Jeux vidéo, e-sport, exploration de mondes ouverts et création de mods.</p>
+                <h3 data-i18n="loisirs.gaming.title">{{ 'loisirs.gaming.title'|trans }}</h3>
+                <p data-i18n="loisirs.gaming.desc">{{ 'loisirs.gaming.desc'|trans }}</p>
             </div>
         </article>
         <article class="loisir-art-card">
             <img src="{{ asset('osintctf.png') }}" alt="CTF / OSINT" />
             <div class="loisir-art-overlay">
                 <span class="loisir-art-icon"><i class="fas fa-user-secret"></i></span>
-                <span class="loisir-art-text" data-i18n="loisirs.ctf.overlay">Défis, énigmes, investigation et cybersécurité !</span>
+                <span class="loisir-art-text" data-i18n="loisirs.ctf.overlay">{{ 'loisirs.ctf.overlay'|trans }}</span>
             </div>
             <div class="loisir-art-body">
-                <h3 data-i18n="loisirs.ctf.title">CTF / OSINT</h3>
-                <p data-i18n="loisirs.ctf.desc">Challenges de cybersécurité, chasse aux indices et résolution d’énigmes numériques.</p>
+                <h3 data-i18n="loisirs.ctf.title">{{ 'loisirs.ctf.title'|trans }}</h3>
+                <p data-i18n="loisirs.ctf.desc">{{ 'loisirs.ctf.desc'|trans }}</p>
             </div>
         </article>
         <article class="loisir-art-card">
             <img src="{{ asset('telephone.webp') }}" alt="Réparation" />
             <div class="loisir-art-overlay">
                 <span class="loisir-art-icon"><i class="fas fa-tools"></i></span>
-                <span class="loisir-art-text" data-i18n="loisirs.repair.overlay">Démontage, réparation, upcycling et curiosité !</span>
+                <span class="loisir-art-text" data-i18n="loisirs.repair.overlay">{{ 'loisirs.repair.overlay'|trans }}</span>
             </div>
             <div class="loisir-art-body">
-                <h3 data-i18n="loisirs.repair.title">Réparation</h3>
-                <p data-i18n="loisirs.repair.desc">Bidouillage d’objets électroniques, micro-soudure et prolongation de vie des appareils.</p>
+                <h3 data-i18n="loisirs.repair.title">{{ 'loisirs.repair.title'|trans }}</h3>
+                <p data-i18n="loisirs.repair.desc">{{ 'loisirs.repair.desc'|trans }}</p>
             </div>
         </article>
         <article class="loisir-art-card">
             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Développement" />
             <div class="loisir-art-overlay">
                 <span class="loisir-art-icon"><i class="fas fa-code"></i></span>
-                <span class="loisir-art-text" data-i18n="loisirs.dev.overlay">Création, innovation, code et design !</span>
+                <span class="loisir-art-text" data-i18n="loisirs.dev.overlay">{{ 'loisirs.dev.overlay'|trans }}</span>
             </div>
             <div class="loisir-art-body">
                     <h3 data-i18n="loisirs.dev.title">{{ 'loisirs.dev.title'|trans }}</h3>

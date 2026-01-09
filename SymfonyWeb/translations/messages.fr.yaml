@@ -56,6 +56,7 @@ sae:
     li2: "Animations CSS"
     li3: "Présentation devant jury"
   sae103:
+    title: "SAE 1.03 Couverture Wifi"
     long: "Missions d'analyse de l'infrastructure réseau et mesure de couverture wifi sur site."
     li1: "Mesures de couverture wifi sur site"
     li2: "Préconisations d’amélioration"
@@ -101,18 +102,24 @@ realisations:
 
 project:
   ctf:
-    long: "Participation à des challenges de cybersécurité et réalisation de write-ups et scripts d'automatisation."
-    li1: "Résolution d’énigmes"
-    li2: "Automatisation de recherches"
+    title: "DÉPLOIEMENT & SYSTÈMES LINUX"
+    long: "AC11.06 - Installation, configuration et sécurisation de postes clients virtualisés."
+    li1: "Virtualisation : Déploiement d'environnements isolés sous Oracle VM VirtualBox (Architecture x86, gestion VDI et RAM)."
+    li2: "Administration Bash : Maîtrise du terminal Linux (Ubuntu 24.04.3) : gestion des droits (chmod/chown), arborescence et automatisation."
+    li3: "Connectivité Réseau : Configuration d'interfaces (NAT/Bridge), diagnostic de communication (Ping, Traceroute) et services DHCP/DNS."
   bot:
-    long: "Développement d'un bot Discord pour gérer une communauté avec fonctionnalités d'automatisation."
-    li1: "Gestion des rôles"
-    li2: "Mini-jeux intégrés"
+    title: "TRAVAIL COLLABORATIF & GESTION DE PROJET"
+    long: "AC13.06 - Organisation et synergie d'équipe au sein d'un environnement professionnel."
+    li1: "Planification Agile : Conception de diagrammes de Gantt (MS Project) avec gestion des tâches critiques et des marges."
+    li2: "Outils Collaboratifs : Administration d'espaces de travail partagés (Google Drive, Canva) et versioning de code via GitHub."
+    li3: "Communication Technique : Rédaction de documentations claires et animation de réunions de suivi pour optimiser les flux de travail."
   repair:
+    title: "Réparation téléphone"
     long: "Micro-réparations et diagnostic matériel sur smartphones, production de guides et documentation."
     li1: "Changement d’écran, batterie"
     li2: "Gestion de stock de pièces"
   web:
+    title: "Projet site vitrine rémunéré"
     long: "Réalisation d'un site pour un client, incluant design, développement et mise en production."
     li1: "Brief client, maquettes Figma"
     li2: "Développement, mise en production"

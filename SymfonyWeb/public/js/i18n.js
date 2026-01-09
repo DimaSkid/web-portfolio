@@ -44,9 +44,16 @@
   }
 
   document.addEventListener('DOMContentLoaded', function(){
+    var urlParams = new URLSearchParams(window.location.search);
+    var urlLocale = urlParams.get('_locale');
     var saved = localStorage.getItem('locale');
-    var initial = saved || document.documentElement.lang || 'fr';
-    loadLocale(initial);
+    var initial = urlLocale || saved || document.documentElement.lang || 'fr';
+    
+    console.log('[i18n] Detected locale:', initial, '(url:', urlLocale, ', saved:', saved, ', html:', document.documentElement.lang, ')');
+    
+    loadLocale(initial).then(function(){
+      console.log('[i18n] Applied translations for:', initial);
+    });
 
     // intercept clicks on lang links
     document.querySelectorAll('.lang-link[data-locale]').forEach(function(a){
@@ -55,7 +62,9 @@
         var loc = a.getAttribute('data-locale');
         if(!loc) return;
         localStorage.setItem('locale', loc);
-        loadLocale(loc);
+        loadLocale(loc).then(function(){
+          console.log('[i18n] Changed to:', loc);
+        });
         // update URL query param without reload
         try{
           var url = new URL(window.location.href);
