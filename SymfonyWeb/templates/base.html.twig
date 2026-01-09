@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app.request.locale|default('fr') }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,21 @@
             margin: 0;
         }
 
+        :root {
+            --site-font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --muted: #6b7280;
+            --accent: #3b82f6;
+            --card-bg: #ffffff;
+        }
+
+        /* Police globale du site (hérite de la page d'accueil) */
+        body {
+            font-family: var(--site-font);
+            color: #111827;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
         .content {
             min-height: 100%;
             padding-bottom: 60px; /* Pour laisser de l'espace pour le footer */
@@ -29,33 +44,83 @@
             background-color: #343a40;
             color: white;
             padding: 10px 0;
+                box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
         }
+
+            /* Footer layout */
+            .footer-custom .footer-inner {
+                max-width: 1100px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr 240px;
+                gap: 18px;
+                align-items: start;
+                padding: 0 18px;
+            }
+
+            .footer-custom .footer-col h4 { margin: 0 0 8px; color: #fff; }
+            .footer-custom a.footer-link { color: #dbeafe; text-decoration: none; }
+            .footer-custom .contact a { display:block; color: #e6eefc; margin-bottom:6px; }
+            .footer-custom .socials { display:flex; gap:8px; align-items:center; }
+            .footer-custom .socials a { display:inline-flex; width:40px; height:40px; align-items:center; justify-content:center; border-radius:8px; background: rgba(255,255,255,0.06); color: #fff; text-decoration:none; }
+
+            .footer-bottom { text-align:center; padding-top:12px; margin-top:12px; border-top:1px solid rgba(255,255,255,0.04); color: rgba(255,255,255,0.8); font-size:0.95rem; }
+
+            /* Back to top */
+            #back-to-top {
+                position: fixed; right: 18px; bottom: 18px; width:44px; height:44px; border-radius:50%; border:none; background:var(--accent); color:white; display:none; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 20px rgba(59,130,246,0.18); z-index:1100;
+            }
+
+            @media (max-width:900px) {
+                .footer-custom .footer-inner { grid-template-columns: 1fr; }
+                #back-to-top { right:12px; bottom:12px; }
+            }
+
+            /* Language switcher (flags) */
+            .navbar { position: relative; }
+            .lang-switcher {
+                position: absolute;
+                right: 12px;
+                top: 8px;
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                z-index: 1200;
+            }
+            .lang-switcher .lang-link { font-size: 20px; text-decoration: none; opacity: 0.95; }
+            .lang-switcher .lang-link:hover { transform: translateY(-1px); }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Accueil</a>
+            <a class="navbar-brand" href="/" data-i18n="nav.home">{{ 'nav.home'|trans }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor02">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Mon CV
+                        <a class="nav-link active" href="/cv" data-i18n="nav.cv">{{ 'nav.cv'|trans }}
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/realisations">Réalisations</a>
+                        <a class="nav-link" href="/realisations" data-i18n="nav.realisations">{{ 'nav.realisations'|trans }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/loisirs">Loisirs</a>
+                        <a class="nav-link" href="/loisirs" data-i18n="nav.loisirs">{{ 'nav.loisirs'|trans }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Contact">Contact</a>
+                        <a class="nav-link" href="/Contact" data-i18n="nav.contact">{{ 'nav.contact'|trans }}</a>
                     </li>
                 </ul>
+            </div>
+            {% set _current_route = app.request.attributes.get('_route') ?? null %}
+            {% set _current_route_params = app.request.attributes.get('_route_params')|default({}) %}
+            <div class="lang-switcher" aria-label="Choisir la langue">
+                <a class="lang-link" data-locale="fr" href="{{ _current_route ? path(_current_route, _current_route_params|merge({'_locale':'fr'})) : app.request.pathinfo ~ '?_locale=fr' }}" title="Français" aria-label="Français">🇫🇷</a>
+                <a class="lang-link" data-locale="en" href="{{ _current_route ? path(_current_route, _current_route_params|merge({'_locale':'en'})) : app.request.pathinfo ~ '?_locale=en' }}" title="English" aria-label="English">🇬🇧</a>
             </div>
         </div>
     </nav>
@@ -63,25 +128,45 @@
     <div class="content">
         {% block body %}{% endblock %}
     </div>
-<footer class="footer-custom bg-dark text-center text-white">
-        <div class="p-4 pb-0">
-            <section class="mb-4">
-                <a class="btn btn-outline-light btn-floating m-1" href="#" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1"
-                   href="https://fr.linkedin.com/in/dimitri-bacot" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1"
-                   href="https://github.com/Dbacot" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-            </section>
+    <footer class="footer-custom" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-col contact">
+                <h4 data-i18n="footer.contact_title">{{ 'footer.contact_title'|trans }}</h4>
+                <a class="footer-link" href="mailto:bacotdimitri@gmail.com">bacotdimitri@gmail.com</a>
+                <a class="footer-link" href="tel:+33750575987">07 50 57 59 87</a>
+                <div style="margin-top:8px; color:rgba(255,255,255,0.85)" data-i18n="footer.available" data-i18n-params='{"city":"Roanne"}'>{{ 'footer.available'|trans({'%city%':'Roanne'}) }}</div>
+            </div>
+            <div class="footer-col socials"> 
+                <h4 data-i18n="footer.socials_title">{{ 'footer.socials_title'|trans }}</h4>
+                <div class="socials" aria-label="Liens sociaux">
+                    <a class="" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a class="" href="https://fr.linkedin.com/in/dimitri-bacot" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="" href="https://github.com/Dbacot" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-col info">
+                <h4 data-i18n="footer.about_title">{{ 'footer.about_title'|trans }}</h4>
+                <p style="margin:0 0 8px;color:rgba(255,255,255,0.9)" data-i18n="footer.portfolio">Site Web de Dimitri Bacot — {{ 'footer.portfolio'|trans }}</p>
+                <small style="color:rgba(255,255,255,0.6)" data-i18n="footer.rights">© {{ "now"|date('Y') }} — {{ 'footer.rights'|trans }}</small>
+            </div>
         </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            Site Web de Dimitri Bacot - Mon Portfolio
+        <div class="footer-bottom">
+            <span data-i18n="footer.bottom">{{ 'footer.bottom'|trans }}</span>
         </div>
+        <button id="back-to-top" aria-label="Remonter en haut">↑</button>
     </footer>
+
+    <script>
+        // Back to top behavior
+        (function(){
+            var btn = document.getElementById('back-to-top');
+            if(!btn) return;
+            window.addEventListener('scroll', function(){
+                if(window.scrollY > 300) btn.style.display = 'flex'; else btn.style.display = 'none';
+            });
+            btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+        })();
+    </script>
+    <script src="/js/i18n.js"></script>
 </body>
 </html>

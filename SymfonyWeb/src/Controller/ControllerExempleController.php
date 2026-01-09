@@ -45,4 +45,10 @@ final class ControllerExempleController extends AbstractController
     {
         return $this->render('controller_exemple/realisations.html.twig');
     }
+
+    #[Route('/cv', name: 'cv')]
+    public function cv(): Response
+    {
+        return $this->render('controller_exemple/cv.html.twig');
+    }
 }

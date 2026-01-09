@@ -1,0 +1,156 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'page.cv.title'|trans }}{% endblock %}
+
+{% block body %}
+<main class="cv-page">
+  <header class="cv-header">
+    <div class="cv-header-inner">
+      <div class="title">
+        <h1 data-i18n="cv.name">Dimitri BACOT</h1>
+        <p class="role" data-i18n="cv.role">Assistance technicien réseau & système</p>
+      </div>
+      <div class="contact-line">
+        <span class="available" data-i18n="cv.available">Disponible à : Roanne, Mâcon</span>
+        <span class="sep">•</span>
+        <a href="tel:+33750575987">07 50 57 59 87</a>
+        <span class="sep">•</span>
+        <a href="mailto:bacotdimitri@gmail.com">bacotdimitri@gmail.com</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="cv-body">
+      <aside class="cv-side">
+      <div class="panel socials">
+        <h3 data-i18n="cv.socials">Réseaux sociaux</h3>
+        <ul>
+          <li><a href="https://linkedin.com/in/dimitri-bacot" target="_blank" rel="noopener">linkedin.com/in/dimitri-bacot</a></li>
+          <li><a href="https://github.com/Dbacot" target="_blank" rel="noopener">github.com/Dbacot</a></li>
+        </ul>
+      </div>
+
+      <div class="panel languages">
+        <h3 data-i18n="cv.languages">Langues</h3>
+        <ul>
+          <li data-i18n="cv.lang.fr">Français — Langue maternelle</li>
+          <li data-i18n="cv.lang.en">Anglais — B1 (vocabulaire du quotidien)</li>
+          <li data-i18n="cv.lang.ru">Russe — A1 (compréhension générale orale)</li>
+        </ul>
+      </div>
+
+      <div class="panel interests">
+        <h3 data-i18n="cv.interests_title">Centres d'intérêt</h3>
+        <p data-i18n="cv.interests">Informatique, OSINT, CTF, réparation d'électronique, jeux vidéo.</p>
+      </div>
+    </aside>
+
+    <section class="cv-main">
+      <div class="panel summary">
+        <h3 data-i18n="cv.profile_title">Profil</h3>
+        <p data-i18n="cv.profile">Je suis à la recherche d'une alternance à partir de juillet, dans le but d'approfondir mes compétences en cybersécurité et administration systèmes. Engagé, curieux et prêt à apprendre rapidement.</p>
+      </div>
+
+      <div class="panel skills">
+        <h3 data-i18n="cv.skills_title">Mes compétences</h3>
+        <div class="cols">
+          <div>
+            <h4 data-i18n="cv.skill.langs">Langages & scripting</h4>
+            <ul>
+              <li data-i18n="cv.skill.langs.py">Python — automation, scripts, CTF tooling</li>
+              <li data-i18n="cv.skill.langs.js">JavaScript / Node.js — petits outils et bots</li>
+              <li data-i18n="cv.skill.langs.c">C++ & Arduino — programmation bas niveau</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="cv.skill.sys">Administration systèmes & réseaux</h4>
+            <ul>
+              <li data-i18n="cv.skill.sys.l1">Linux basics / shell — admin et debugging</li>
+              <li data-i18n="cv.skill.sys.l2">Réseau : DHCP, DNS, routage, câblage, Wifi</li>
+              <li data-i18n="cv.skill.sys.l3">Outils : Packet Tracer, matériel Cisco, supervision basique</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="cv.skill.web">Web & sécurité</h4>
+            <ul>
+              <li data-i18n="cv.skill.web.l1">HTML, CSS, SQL, PHP, Symfony — projets web</li>
+              <li data-i18n="cv.skill.web.l2">Versionning : Git / GitHub</li>
+              <li data-i18n="cv.skill.web.l3">OSINT / Pentesting (CTF) — investigations et write-ups</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel education">
+        <h3 data-i18n="cv.education_title">Diplômes & Formations</h3>
+        <ol class="timeline">
+          <li>
+            <strong data-i18n="cv.education.bachelor.title">Année en cours — Bachelor en Sécurité et Cybersécurité</strong>
+            <div class="muted" data-i18n="cv.education.bachelor.school">Guardia Cybersecurity School, Roanne</div>
+            <div class="muted" data-i18n="cv.education.bachelor.dates">Septembre 2024 — Juin 2027</div>
+            <p data-i18n="cv.education.bachelor.desc">Compétences en développement, protection des infrastructures numériques et gestion des incidents.</p>
+          </li>
+          <li>
+            <strong data-i18n="cv.education.bac.title">Baccalauréat Général</strong>
+            <div class="muted" data-i18n="cv.education.bac.school">Lycée Général et Technologique Lamartine, Mâcon</div>
+            <div class="muted" data-i18n="cv.education.bac.dates">Septembre 2021 — Juillet 2024</div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="panel experience">
+        <h3 data-i18n="cv.experience_title">Expériences professionnelles</h3>
+        <ol class="timeline">
+          <li>
+            <strong data-i18n="cv.exp.leclerc.title">Employé polyvalent — Mise en rayon</strong>
+            <div class="muted" data-i18n="cv.exp.leclerc.company">E.Leclerc, Mâcon</div>
+            <div class="muted" data-i18n="cv.exp.leclerc.dates">Depuis janvier 2025 (CDD)</div>
+            <p data-i18n="cv.exp.leclerc.desc">Tâches : réception, mise en rayon, gestion des stocks, relation client.</p>
+          </li>
+          <li>
+            <strong data-i18n="cv.exp.stage.title">Stage d'observation</strong>
+            <div class="muted" data-i18n="cv.exp.stage.company">Panier Sympa, Rue de Crewe, 71000 Mâcon</div>
+            <div class="muted" data-i18n="cv.exp.stage.dates">Septembre 2020 — Novembre 2020</div>
+            <p data-i18n="cv.exp.stage.desc">Découverte du commerce, gestion des stocks et relation clientèle.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </section>
+
+</main>
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('styles/cv.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+  <script>
+    // Small animations to reveal CV sections progressively
+    document.addEventListener('DOMContentLoaded', function(){
+      // header
+      var title = document.querySelector('.title h1');
+      var role = document.querySelector('.title .role');
+      var contact = document.querySelector('.contact-line');
+      if(title) { title.classList.add('animated-fade'); }
+      if(role) { role.classList.add('animated-fade'); }
+      if(contact) { contact.classList.add('animated-fade'); }
+
+      // panels
+      var panels = document.querySelectorAll('.cv-main .panel, .cv-side .panel');
+      panels.forEach(function(p, i){
+        setTimeout(function(){ p.classList.add('animated-fade'); }, 120 * i + 200);
+      });
+
+      // skills stagger
+      var cols = document.querySelectorAll('.skills .cols > div');
+      cols.forEach(function(c, i){ c.classList.add('animate-delay-' + (i+1)); });
+
+      // timeline items
+      var items = document.querySelectorAll('.timeline li');
+      items.forEach(function(it, i){ setTimeout(function(){ it.classList.add('animate'); }, 260 * i + 300); });
+    });
+  </script>
+{% endblock %}
+
+{% endblock %}

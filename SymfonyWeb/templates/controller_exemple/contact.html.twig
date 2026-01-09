@@ -1,95 +1,149 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contactez moi{% endblock %}
+{% block title %}{{ 'page.contact.title'|trans }}{% endblock %}
 
 {% block body %}
-    <div class="contact-container">
-        <h1>Contactez-moi</h1>
-        <p>Vous pouvez me joindre par e-mail ou téléphone. Je serai heureux de vous répondre rapidement.</p>
+    <section class="contact-hero">
+        <div class="contact-inner">
+            <div class="contact-card">
+                <div class="contact-left">
+                    <h1 data-i18n="page.contact.title">{{ 'page.contact.title'|trans }}</h1>
+                    <p class="lead" data-i18n="contact.lead">{{ 'contact.lead'|trans }}</p>
 
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i> 
-                <a class="contact-link" href="mailto:bacotdimitri@gmail.com">bacotdimitri@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone-alt"></i>
-                <a class="contact-link" href="tel:+33750575987">07 50 57 59 87</a>
+                    <div class="cta-buttons">
+                        <a class="cta-btn" href="mailto:bacotdimitri@gmail.com" data-i18n="contact.email_button">{{ 'contact.email_button'|trans }}</a>
+                        <a class="cta-btn outline" href="tel:+33750575987" data-i18n="contact.call_button">{{ 'contact.call_button'|trans }}</a>
+                        <button class="cta-btn ghost" id="copy-email" data-i18n="contact.copy_button" data-i18n-copied="{{ 'contact.copy_copied_short'|trans }}" data-i18n-copied-text="{{ 'contact.copy_copied'|trans }}">{{ 'contact.copy_button'|trans }}</button>
+                    </div>
+                </div>
+                <aside class="contact-right" aria-labelledby="contact-info">
+                    <h2 id="contact-info" data-i18n="contact.details_title">{{ 'contact.details_title'|trans }}</h2>
+                    <div class="info-block">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:bacotdimitri@gmail.com">bacotdimitri@gmail.com</a>
+                    </div>
+                    <div class="info-block">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+33750575987">07 50 57 59 87</a>
+                    </div>
+                    <div class="info-block">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-i18n="contact.address">{{ 'contact.address'|trans }}</span>
+                    </div>
+
+                    <div class="socials">
+                        <a class="social" href="https://fr.linkedin.com/in/dimitri-bacot" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a class="social" href="https://github.com/Dbacot" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </aside>
             </div>
         </div>
-    </div>
+    </section>
+
 {% block stylesheets %}
     <style>
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-            margin-top:5%;
-        }
+        /* Contact – version légère (sans envoi) */
+        .contact-hero { padding: 48px 0 80px; background: linear-gradient(180deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.01) 100%); }
+        .contact-inner{ max-width:1100px; margin:0 auto; padding: 0 16px; }
+        .contact-card{ display:grid; grid-template-columns: 1fr 340px; gap:28px; align-items:start; }
+        .contact-left{ background: var(--card-bg); padding:28px; border-radius:14px; box-shadow:0 12px 40px rgba(14,30,60,0.06); }
+        .contact-right{ background: linear-gradient(180deg,#fbfdff,#f7fbff); padding:22px; border-radius:14px; box-shadow:0 8px 28px rgba(14,30,60,0.05); }
 
-        h1 {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
+        h1{ font-size:28px; margin:0 0 8px; }
+        .lead{ color:var(--muted); margin-bottom:18px; }
 
-        p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
+        .cta-buttons{ display:flex; gap:12px; flex-wrap:wrap; }
+        .cta-btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 16px; background:linear-gradient(90deg,var(--accent),#06b6d4); color:#fff; border-radius:12px; text-decoration:none; font-weight:600; box-shadow:0 8px 24px rgba(59,130,246,0.12); border:none; cursor:pointer; }
+        .cta-btn.outline{ background:transparent; color:var(--accent); border:1.5px solid rgba(59,130,246,0.18); }
+        .cta-btn.ghost{ background:#f8fafc; color:#0b2540; box-shadow:none; border:1px solid #eef2ff; }
+        .cta-btn:active{ transform:translateY(1px); }
 
-        /* Conteneur des infos de contact */
-        .contact-info {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            gap: 20px;
-        }
+        .contact-right h2{ margin-top:0; margin-bottom:12px; }
+        .info-block{ display:flex; gap:12px; align-items:center; margin:10px 0; color:var(--muted); }
+        .info-block i{ font-size:18px; color:var(--accent); }
+        .info-block a{ color:inherit; text-decoration:none; font-weight:600; color:#0b2540; }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: #333;
-        }
+        .socials{ display:flex; gap:12px; margin-top:18px; }
+        .social{ display:inline-flex; width:44px; height:44px; border-radius:10px; align-items:center; justify-content:center; background:#fff; color:#0b2540; box-shadow:0 6px 18px rgba(10,20,40,0.06); text-decoration:none; }
 
-        /* Icônes de contact */
-        .contact-item i {
-            font-size: 1.8rem;
-            color: #007BFF;
-            margin-right: 10px;
-        }
+    /* Utility: visually hidden but accessible */
+    .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; border: 0; padding: 0; margin: -1px; }
 
-        /* Style des liens de contact */
-        .contact-link {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        /* Effet de survol des liens */
-        .contact-link:hover {
-            color: #0056b3;
-        }
-
-        /* Réactivité */
-        @media (max-width: 768px) {
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-
+        @media (max-width:960px){ .contact-card{ grid-template-columns: 1fr; } }
     </style>
-    <!-- Inclusion de la librairie Font Awesome pour les icônes -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script>
+                // Copy-to-clipboard with graceful fallback + accessible live feedback
+        document.addEventListener('DOMContentLoaded', function(){
+            var btn = document.getElementById('copy-email');
+            if(!btn) return;
+
+            // store original label so we can revert
+            var originalLabel = btn.textContent || 'Copier l\'e‑mail';
+
+            // create (or find) a polite live region to announce success to assistive tech
+            var live = document.getElementById('copy-feedback');
+            if(!live){
+                live = document.createElement('span');
+                live.id = 'copy-feedback';
+                live.className = 'visually-hidden';
+                live.setAttribute('aria-live', 'polite');
+                btn.parentNode.appendChild(live);
+            }
+
+            function fallbackCopy(text){
+                var ta = document.createElement('textarea');
+                ta.value = text;
+                // place off-screen
+                ta.style.position = 'fixed';
+                ta.style.top = '-9999px';
+                document.body.appendChild(ta);
+                ta.focus();
+                ta.select();
+                try{
+                    var ok = document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    return ok;
+                }catch(e){
+                    document.body.removeChild(ta);
+                    return false;
+                }
+            }
+
+            btn.addEventListener('click', function(){
+                var email = 'bacotdimitri@gmail.com';
+
+                // Try modern Clipboard API first (works on HTTPS contexts)
+                if(navigator.clipboard && navigator.clipboard.writeText){
+                    navigator.clipboard.writeText(email)
+                        .then(function(){
+                            btn.textContent = '✅ ' + (btn.getAttribute('data-i18n-copied') || 'Copié');
+                            live.textContent = (btn.getAttribute('data-i18n-copied-text') || 'Adresse e‑mail copiée.');
+                            setTimeout(function(){ btn.textContent = originalLabel; live.textContent = ''; }, 1800);
+                        })
+                        .catch(function(){
+                            // fallback to legacy method
+                                if(fallbackCopy(email)){
+                                btn.textContent = '✅ ' + (btn.getAttribute('data-i18n-copied') || 'Copié');
+                                live.textContent = (btn.getAttribute('data-i18n-copied-text') || 'Adresse e‑mail copiée.');
+                                setTimeout(function(){ btn.textContent = originalLabel; live.textContent = ''; }, 1800);
+                            } else {
+                                alert('Copie impossible — utilisez le lien mailto.');
+                            }
+                        });
+                } else {
+                    // no modern API, try fallback
+                    if(fallbackCopy(email)){
+                        btn.textContent = '✅ ' + (btn.getAttribute('data-i18n-copied') || 'Copié');
+                        live.textContent = (btn.getAttribute('data-i18n-copied-text') || 'Adresse e‑mail copiée.');
+                        setTimeout(function(){ btn.textContent = originalLabel; live.textContent = ''; }, 1800);
+                    } else {
+                        alert('Copie impossible — utilisez le lien mailto.');
+                    }
+                }
+            });
+        });
+    </script>
 {% endblock %}
 {% endblock %}
+

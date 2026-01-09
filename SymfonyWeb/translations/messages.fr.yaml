@@ -1,0 +1,194 @@
+nav:
+  home: "Accueil"
+  cv: "Mon CV"
+  realisations: "Réalisations"
+  loisirs: "Loisirs"
+  contact: "Contact"
+
+page:
+  home:
+    title: "Bienvenue sur mon portfolio"
+  contact:
+    title: "Contactez-moi"
+  realisations:
+    title: "Toutes mes réalisations"
+  cv:
+    title: "CV — Dimitri Bacot"
+
+hero:
+  greeting: "Bonjour, je suis étudiant en Cybersécurité & Développement"
+  description: "Je crée des projets orientés sécurité et applications web. Ici vous trouverez mon parcours, mes compétences et des projets concrets — y compris mes loisirs transformés en petits projets pratiques."
+
+intro:
+  text: "Je m'appelle %name%, je développe des outils orientés sécurité, j'aime l'investigation numérique (OSINT/CTF) et la résolution de problèmes concrets en réseau."
+
+cta:
+  learn_more: "Savoir plus"
+
+reasons:
+  title: "Mes raisons de suivre cette voie"
+  description: "Je suis quelqu'un de très curieux, le numérique j'y touche depuis tout petit donc ça m'a favorisé sur cette voie"
+
+projects:
+  title: "Mes Projets & SAE"
+  intro: "Découvrez mes réalisations concrètes, qu'elles soient issues de projets personnels, scolaires ou de situations d'apprentissage (SAE)."
+  explore_all: "Tout explorer"
+
+sae:
+  sae101:
+    title: "SAE1.01 : Hygiène informatique & cybersécurité"
+    desc: "MOOC ANSSI, diaporama sur les vulnérabilités, présentation orale. Sensibilisation aux risques et enjeux de la cybersécurité."
+    long: "Contexte, livrables, outils et compétences liés au MOOC ANSSI et aux travaux associés."
+    li1: "Présentation orale devant la classe"
+    li2: "Travail en autonomie"
+    li3: "Exemples d'attaques réelles étudiées"
+  sae12:
+    title: "SAE12 : S'initier aux réseaux informatiques"
+    desc: "Découverte des bases du réseau, configuration IP, manipulation de matériel et protocoles essentiels."
+    long: "Premiers pas dans la configuration réseau, matériel et protocoles essentiels."
+    li1: "Manipulation de switchs et routeurs"
+    li2: "Travail en binôme"
+  portfolio:
+    title: "SAE Portfolio Web personnel"
+    desc: "Conception, développement et mise en ligne d’un portfolio web pour présenter mon parcours, mes compétences et mes projets."
+    long: "Réalisation d'un site web complet pour présenter le parcours, les compétences et les projets."
+    li1: "Design personnalisé"
+    li2: "Animations CSS"
+    li3: "Présentation devant jury"
+  sae103:
+    long: "Missions d'analyse de l'infrastructure réseau et mesure de couverture wifi sur site."
+    li1: "Mesures de couverture wifi sur site"
+    li2: "Préconisations d’amélioration"
+    li3: "Travail en équipe"
+
+hobbies:
+  title: "Mes loisirs"
+
+hobby:
+  gaming:
+    title: "Gaming"
+    desc: "Je joue à des jeux vidéo pour me détendre et découvrir de nouveaux univers."
+  ctf:
+    title: "CTF / OSINT"
+    desc: "Je participe à des challenges de cybersécurité et d'investigation numérique pour le plaisir."
+  repair:
+    title: "Réparation"
+    desc: "J'aime démonter et réparer des objets électroniques pour comprendre leur fonctionnement."
+
+education:
+  title: "Mon parcours Scolaire"
+
+footer:
+  contact_title: "Contact"
+  available: "Disponible : %city%"
+  socials_title: "Réseaux"
+  about_title: "À propos"
+  portfolio: "Portfolio"
+  rights: "Tous droits réservés"
+  bottom: "Conçu et développé par Dimitri — Disponible pour alternance et stages"
+
+contact:
+  lead: "Pour toute question ou proposition, choisissez une des options ci‑dessous — c'est simple et rapide."
+  email_button: "Envoyer un e‑mail"
+  call_button: "Appeler"
+  copy_button: "Copier l'e‑mail"
+  details_title: "Mes coordonnées"
+  address: "Roanne, France"
+  copy_copied: "Adresse e‑mail copiée."
+
+realisations:
+  intro: "Retrouvez ici l'ensemble de mes projets et SAE, avec plus de détails, d'exemples et de contexte sur chaque expérience."
+
+project:
+  ctf:
+    long: "Participation à des challenges de cybersécurité et réalisation de write-ups et scripts d'automatisation."
+    li1: "Résolution d’énigmes"
+    li2: "Automatisation de recherches"
+  bot:
+    long: "Développement d'un bot Discord pour gérer une communauté avec fonctionnalités d'automatisation."
+    li1: "Gestion des rôles"
+    li2: "Mini-jeux intégrés"
+  repair:
+    long: "Micro-réparations et diagnostic matériel sur smartphones, production de guides et documentation."
+    li1: "Changement d’écran, batterie"
+    li2: "Gestion de stock de pièces"
+  web:
+    long: "Réalisation d'un site pour un client, incluant design, développement et mise en production."
+    li1: "Brief client, maquettes Figma"
+    li2: "Développement, mise en production"
+    li3: "Facturation et suivi"
+
+loisirs:
+  title: "Mes Loisirs"
+  intro: "Laissez-vous inspirer par mes passions, entre créativité numérique, bidouillage et esprit de jeu !"
+  gaming:
+    overlay: "Univers immersifs, compétition, stratégie et fun !"
+    title: "Gaming"
+    desc: "Jeux vidéo, e-sport, exploration de mondes ouverts et création de mods."
+  ctf:
+    overlay: "Défis, énigmes, investigation et cybersécurité !"
+    title: "CTF / OSINT"
+    desc: "Challenges de cybersécurité, chasse aux indices et résolution d’énigmes numériques."
+  repair:
+    overlay: "Démontage, réparation, upcycling et curiosité !"
+    title: "Réparation"
+    desc: "Bidouillage d’objets électroniques, micro-soudure et prolongation de vie des appareils."
+  dev:
+    overlay: "Création, innovation, code et design !"
+    title: "Développement"
+    desc: "Programmation créative, projets web, bots, scripts et design d’interfaces."
+
+cv:
+  name: "Dimitri BACOT"
+  role: "Assistance technicien réseau & système"
+  available: "Disponible à : Roanne, Mâcon"
+  socials: "Réseaux sociaux"
+  languages: "Langues"
+  lang:
+    fr: "Français — Langue maternelle"
+    en: "Anglais — B1 (vocabulaire du quotidien)"
+    ru: "Russe — A1 (compréhension générale orale)"
+  interests_title: "Centres d'intérêt"
+  interests: "Informatique, OSINT, CTF, réparation d'électronique, jeux vidéo."
+  profile_title: "Profil"
+  profile: "Je suis à la recherche d'une alternance à partir de juillet, dans le but d'approfondir mes compétences en cybersécurité et administration systèmes. Engagé, curieux et prêt à apprendre rapidement."
+  skills_title: "Mes compétences"
+  skill:
+    langs:
+      title: "Langages & scripting"
+      py: "Python — automation, scripts, CTF tooling"
+      js: "JavaScript / Node.js — petits outils et bots"
+      c: "C++ & Arduino — programmation bas niveau"
+    sys:
+      title: "Administration systèmes & réseaux"
+      l1: "Linux basics / shell — admin et debugging"
+      l2: "Réseau : DHCP, DNS, routage, câblage, Wifi"
+      l3: "Outils : Packet Tracer, matériel Cisco, supervision basique"
+    web:
+      title: "Web & sécurité"
+      l1: "HTML, CSS, SQL, PHP, Symfony — projets web"
+      l2: "Versionning : Git / GitHub"
+      l3: "OSINT / Pentesting (CTF) — investigations et write-ups"
+  education_title: "Diplômes & Formations"
+  education:
+    bachelor:
+      title: "Année en cours — Bachelor en Sécurité et Cybersécurité"
+      school: "Guardia Cybersecurity School, Roanne"
+      dates: "Septembre 2024 — Juin 2027"
+      desc: "Compétences en développement, protection des infrastructures numériques et gestion des incidents."
+    bac:
+      title: "Baccalauréat Général"
+      school: "Lycée Général et Technologique Lamartine, Mâcon"
+      dates: "Septembre 2021 — Juillet 2024"
+  experience_title: "Expériences professionnelles"
+  exp:
+    leclerc:
+      title: "Employé polyvalent — Mise en rayon"
+      company: "E.Leclerc, Mâcon"
+      dates: "Depuis janvier 2025 (CDD)"
+      desc: "Tâches : réception, mise en rayon, gestion des stocks, relation client."
+    stage:
+      title: "Stage d'observation"
+      company: "Panier Sympa, Rue de Crewe, 71000 Mâcon"
+      dates: "Septembre 2020 — Novembre 2020"
+      desc: "Découverte du commerce, gestion des stocks et relation clientèle."

@@ -10,17 +10,38 @@ body {
   color: #fff;
 }
 .hero-inner{
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
+  max-width: 1100px; 
+  margin: 0 auto;    
   grid-template-columns: 1fr 320px;
   gap: 24px;
   align-items: center;
+  justify-items: center;
 }
 .hero-left h1{
   margin: 0 0 8px 0;
   font-size: 32px;
   line-height: 1.05;
+}
+.hero-left{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 12px; 
+}
+.intro-card{
+  width: 100%;
+  max-width: 720px;
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 .hero-text{ color: rgba(255,255,255,0.85); margin: 0 0 14px 0; }
 .hero-ctas{ display:flex; gap: 12px; }
