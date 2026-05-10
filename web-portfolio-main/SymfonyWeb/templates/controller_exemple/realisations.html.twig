@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'page.realisations.title'|trans }}{% endblock %}
+
+{% block body %}
+<section class="realisations">
+    <h1 data-i18n="page.realisations.title">{{ 'page.realisations.title'|trans }}</h1>
+    <p class="realisations-intro" data-i18n="realisations.intro">{{ 'realisations.intro'|trans }}</p>
+
+    <!-- RT1 : Administrer les réseaux et l'Internet -->
+    <section class="rt-section">
+        <h2>RT1 : Administrer les réseaux et l'Internet</h2>
+        <div class="ac-badges">
+            <span class="ac-badge not-validated">AC11.01</span>
+            <span class="ac-badge not-validated">AC11.02</span>
+            <span class="ac-badge not-validated">AC11.03</span>
+            <span class="ac-badge not-validated">AC11.04</span>
+            <span class="ac-badge not-validated">AC11.05</span>
+            <span class="ac-badge validated">AC11.06 ✓</span>
+        </div>
+        <div class="realisations-grid">
+            <article class="real-card sae">
+                <img src="{{ asset('mooc.jpg') }}" alt="SAE1.01 : Hygiène informatique & cybersécurité" />
+                <div class="real-body">
+                    <h3 data-i18n="sae.sae101.title">{{ 'sae.sae101.title'|trans }}</h3>
+                    <p data-i18n="sae.sae101.long">{{ 'sae.sae101.long'|trans }}</p>
+                    <ul>
+                        <li data-i18n="sae.sae101.li1">{{ 'sae.sae101.li1'|trans }}</li>
+                        <li data-i18n="sae.sae101.li2">{{ 'sae.sae101.li2'|trans }}</li>
+                        <li data-i18n="sae.sae101.li3">{{ 'sae.sae101.li3'|trans }}</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="real-card sae">
+                <img src="{{ asset('/f3.png') }}" alt="SAE 1.02 : S'initier aux réseaux informatiques" />
+                <div class="real-body">
+                    <h3 data-i18n="sae.sae12.title">{{ 'sae.sae12.title'|trans }}</h3>
+                    <p data-i18n="sae.sae12.long">{{ 'sae.sae12.long'|trans }}</p>
+                    <ul>
+                        <li data-i18n="sae.sae12.li1">{{ 'sae.sae12.li1'|trans }}</li>
+                        <li data-i18n="sae.sae12.li2">{{ 'sae.sae12.li2'|trans }}</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="real-card projet">
+                <div class="ac-project-badge">AC11.06</div>
+                <img src="{{ asset('ubuntu.png') }}" alt="DÉPLOIEMENT & SYSTÈMES LINUX" />
+                <div class="real-body">
+                    <h3 data-i18n="project.ctf.title">{{ 'project.ctf.title'|trans }}</h3>
+                    <p data-i18n="project.ctf.long">{{ 'project.ctf.long'|trans }}</p>
+                    <ul>
+                        <li data-i18n="project.ctf.li1">{{ 'project.ctf.li1'|trans }}</li>
+                        <li data-i18n="project.ctf.li2">{{ 'project.ctf.li2'|trans }}</li>
+                        <li data-i18n="project.ctf.li3">{{ 'project.ctf.li3'|trans }}</li>
+                    </ul>
+                    <div class="button-group">
+                        <a href="https://docs.google.com/document/d/1xcxtYRSsuH0FMFPduEUtA24G72QUlvTF9PUNZvDrldI/edit?usp=sharing" class="btn btn-primary">Document preuve</a>
+                        <a href="https://docs.google.com/document/d/1rQbmhOemEe63fb70MAq2yNvjartXH7hk5tEjtJNB5Gw/edit?usp=sharing" class="btn btn-secondary">Analyse réflexive</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- RT2 : Connecter les entreprises et les usagers -->
+    <section class="rt-section">
+        <h2>RT2 : Connecter les entreprises et les usagers</h2>
+        <div class="ac-badges">
+            <span class="ac-badge validated">AC12.01 ✓</span>
+            <span class="ac-badge not-validated">AC12.02</span>
+            <span class="ac-badge not-validated">AC12.03</span>
+            <span class="ac-badge not-validated">AC12.04</span>
+            <span class="ac-badge not-validated">AC12.05</span>
+        </div>
+        <div class="realisations-grid">
+            <article class="real-card sae">
+                <div class="ac-project-badge">AC12.01</div>
+                <img src="/cable.jpg" alt="SAE 1.03 : Couverture Wifi" />
+                <div class="real-body">
+                    <h3>SAE 1.03 : Mesure et analyse réseaux</h3>
+                    <p>Mesures de couverture sur site et préconisations d'amélioration.</p>
+                    <ul>
+                        <li>Analyse de couverture réseau</li>
+                        <li>Mesures de signal</li>
+                        <li>Préconisations d'optimisation</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- RT3 : Créer des outils et des applications informatiques -->
+    <section class="rt-section">
+        <h2>RT3 : Créer des outils et des applications informatiques</h2>
+        <div class="ac-badges">
+            <span class="ac-badge not-validated">AC13.01</span>
+            <span class="ac-badge not-validated">AC13.02</span>
+            <span class="ac-badge not-validated">AC13.03</span>
+            <span class="ac-badge validated">AC13.04 ✓</span>
+            <span class="ac-badge validated">AC13.06 ✓</span>
+        </div>
+        <div class="realisations-grid">
+            <article class="real-card projet">
+                <div class="ac-project-badge">AC13.06</div>
+                <img src="{{ asset('groupes.png') }}" alt="TRAVAIL COLLABORATIF & GESTION DE PROJET" />
+                <div class="real-body">
+                    <h3>TRAVAIL COLLABORATIF & GESTION DE PROJET</h3>
+                    <p>Organisation et synergie d'équipe au sein d'un environnement professionnel.</p>
+                    <ul>
+                        <li>Planification Agile avec diagrammes de Gantt (MS Project)</li>
+                        <li>Administration d'espaces partagés (Google Drive, Canva, GitHub)</li>
+                        <li>Communication technique et documentation</li>
+                    </ul>
+                    <div class="button-group">
+                        <a href="https://docs.google.com/document/d/18uY2RnrN0dpXAh4VDoPRvskfBB3939MSMK0znMJPIMk/edit?tab=t.0" class="btn btn-primary">Document preuve</a>
+                        <a href="https://docs.google.com/document/d/1rQbmhOemEe63fb70MAq2yNvjartXH7hk5tEjtJNB5Gw/edit?tab=t.0#heading=h.613g2vpxfp96" class="btn btn-secondary">Analyse réflexive</a>
+                    </div>
+                </div>
+            </article>
+            <article class="real-card sae">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="SAE Portfolio Web" />
+                <div class="real-body">
+                    <h3 data-i18n="sae.portfolio.title">{{ 'sae.portfolio.title'|trans }}</h3>
+                    <p data-i18n="sae.portfolio.long">{{ 'sae.portfolio.long'|trans }}</p>
+                    <ul>
+                        <li data-i18n="sae.portfolio.li1">{{ 'sae.portfolio.li1'|trans }}</li>
+                        <li data-i18n="sae.portfolio.li2">{{ 'sae.portfolio.li2'|trans }}</li>
+                        <li data-i18n="sae.portfolio.li3">{{ 'sae.portfolio.li3'|trans }}</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Expériences Hors Parcours -->
+    <section class="rt-section">
+        <h2>Expériences Hors Parcours</h2>
+        <p>Projets personnels et professionnels ne rentrant pas strictement dans le référentiel BUT R&T.</p>
+        <div class="realisations-grid">
+            <article class="real-card projet">
+                <img src="{{ asset('telephone.webp') }}" alt="Réparation téléphone" />
+                <div class="real-body">
+                    <h3>Micro-réparations, diagnostic matériel, changement d'écran/batterie</h3>
+                    <p>Description des réparations de téléphone.</p>
+                    <ul>
+                        <li>Diagnostic matériel</li>
+                        <li>Changement d'écran</li>
+                        <li>Changement de batterie</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="real-card projet">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Projet site vitrine rémunéré" />
+                <div class="real-body">
+                    <h3>Brief client, maquettes Figma, facturation</h3>
+                    <p>Description du projet site vitrine rémunéré.</p>
+                    <ul>
+                        <li>Brief client</li>
+                        <li>Maquettes Figma</li>
+                        <li>Facturation</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+</section>
+{% endblock %}
