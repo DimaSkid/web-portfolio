@@ -591,6 +591,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   align-items: stretch;
+  grid-auto-rows: 1fr;
 }
 .real-card {
   background: linear-gradient(180deg,#fff,#f7fafc 80%,#e0e7ef 100%);
@@ -602,6 +603,7 @@ body {
   transition: transform 0.22s, box-shadow 0.22s;
   position: relative;
   border: 1.5px solid #e5e7eb;
+  height: 100%;
 }
 .real-card:hover {
   transform: translateY(-8px) scale(1.025);
@@ -619,6 +621,18 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+.real-card {
+  min-height: 100%;
+}
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+.button-group .btn {
+  margin-bottom: 0;
 }
 .real-body h3 {
   margin: 0 0 8px 0;
