@@ -46,26 +46,38 @@
   document.addEventListener('DOMContentLoaded', function(){
     var urlParams = new URLSearchParams(window.location.search);
     var urlLocale = urlParams.get('_locale');
-    var saved = localStorage.getItem('locale');
-    var initial = urlLocale || saved || document.documentElement.lang || 'fr';
+    var htmlLocale = document.documentElement.lang || 'fr';
+    var initial = urlLocale || htmlLocale;
     
-    console.log('[i18n] Detected locale:', initial, '(url:', urlLocale, ', saved:', saved, ', html:', document.documentElement.lang, ')');
-    
-    loadLocale(initial).then(function(){
-      console.log('[i18n] Applied translations for:', initial);
-    });
+    if (initial !== 'fr') {
+      if (urlLocale) {
+        localStorage.setItem('locale', urlLocale);
+      }
+      loadLocale(initial).then(function(){
+        console.log('[i18n] Applied translations for:', initial);
+      });
+    } else {
+      console.log('[i18n] Default French content, no translation loaded');
+      document.querySelectorAll('.lang-link').forEach(function(a){
+        a.classList.toggle('active-locale', a.getAttribute('data-locale') === 'fr');
+      });
+    }
 
     // intercept clicks on lang links
     document.querySelectorAll('.lang-link[data-locale]').forEach(function(a){
       a.addEventListener('click', function(ev){
-        ev.preventDefault();
         var loc = a.getAttribute('data-locale');
         if(!loc) return;
+        
+        if (loc === 'fr') {
+          return;
+        }
+        
+        ev.preventDefault();
         localStorage.setItem('locale', loc);
         loadLocale(loc).then(function(){
           console.log('[i18n] Changed to:', loc);
         });
-        // update URL query param without reload
         try{
           var url = new URL(window.location.href);
           url.searchParams.set('_locale', loc);

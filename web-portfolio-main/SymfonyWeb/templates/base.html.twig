@@ -1,172 +1,158 @@
 <!DOCTYPE html>
-<html lang="{{ app.request.locale|default('fr') }}">
+<html lang="{{ app.request.locale }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Welcome!{% endblock %}</title>
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
     <link href="https://bootswatch.com/5/litera/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
     {% block javascripts %}
         {% block importmap %}{{ importmap('app') }}{% endblock %}
     {% endblock %}
+
     <style>
-        /* Pour que le footer soit toujours en bas */
+        :root {
+            --site-font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --accent: #3b82f6;
+        }
+
         body, html {
             height: 100%;
             margin: 0;
-        }
-
-        :root {
-            --site-font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            --muted: #6b7280;
-            --accent: #3b82f6;
-            --card-bg: #ffffff;
-        }
-
-        /* Police globale du site (hérite de la page d'accueil) */
-        body {
             font-family: var(--site-font);
             color: #111827;
-            -webkit-font-smoothing:antialiased;
-            -moz-osx-font-smoothing:grayscale;
+            -webkit-font-smoothing: antialiased;
         }
 
         .content {
-            min-height: 100%;
-            padding-bottom: 60px; /* Pour laisser de l'espace pour le footer */
+            min-height: calc(100vh - 160px); /* Ajustement pour pousser le footer */
+            padding-bottom: 40px;
         }
 
         footer.footer-custom {
-            position: relative;
-            bottom: 0;
-            width: 100%;
             background-color: #343a40;
             color: white;
-            padding: 10px 0;
-                box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+            padding: 30px 0 15px;
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
         }
 
-            /* Footer layout */
-            .footer-custom .footer-inner {
-                max-width: 1100px;
-                margin: 0 auto;
-                display: grid;
-                grid-template-columns: 1fr 1fr 240px;
-                gap: 18px;
-                align-items: start;
-                padding: 0 18px;
-            }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 0 20px;
+        }
 
-            .footer-custom .footer-col h4 { margin: 0 0 8px; color: #fff; }
-            .footer-custom a.footer-link { color: #dbeafe; text-decoration: none; }
-            .footer-custom .contact a { display:block; color: #e6eefc; margin-bottom:6px; }
-            .footer-custom .socials { display:flex; gap:8px; align-items:center; }
-            .footer-custom .socials a { display:inline-flex; width:40px; height:40px; align-items:center; justify-content:center; border-radius:8px; background: rgba(255,255,255,0.06); color: #fff; text-decoration:none; }
+        .footer-col h4 { margin-bottom: 15px; font-size: 1.1rem; color: #fff; }
+        .footer-link { color: #dbeafe; text-decoration: none; display: block; margin-bottom: 5px; }
+        .footer-link:hover { text-decoration: underline; }
+        
+        .socials-icons { display: flex; gap: 10px; }
+        .socials-icons a { 
+            width: 35px; height: 35px; display: flex; align-items: center; 
+            justify-content: center; border-radius: 8px; background: rgba(255,255,255,0.1); 
+            color: white; text-decoration: none; transition: 0.3s;
+        }
+        .socials-icons a:hover { background: var(--accent); }
 
-            .footer-bottom { text-align:center; padding-top:12px; margin-top:12px; border-top:1px solid rgba(255,255,255,0.04); color: rgba(255,255,255,0.8); font-size:0.95rem; }
+        .footer-bottom { 
+            text-align: center; margin-top: 25px; padding-top: 15px; 
+            border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: #bbb;
+        }
 
-            /* Back to top */
-            #back-to-top {
-                position: fixed; right: 18px; bottom: 18px; width:44px; height:44px; border-radius:50%; border:none; background:var(--accent); color:white; display:none; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 20px rgba(59,130,246,0.18); z-index:1100;
-            }
+        #back-to-top {
+            position: fixed; right: 20px; bottom: 20px; width: 45px; height: 45px;
+            border-radius: 50%; border: none; background: var(--accent); color: white;
+            display: none; align-items: center; justify-content: center; cursor: pointer;
+            z-index: 1000; transition: 0.3s;
+        }
 
-            @media (max-width:900px) {
-                .footer-custom .footer-inner { grid-template-columns: 1fr; }
-                #back-to-top { right:12px; bottom:12px; }
-            }
+        .lang-switcher {
+            display: flex; gap: 10px; margin-left: 15px;
+        }
+        .lang-link { font-size: 1.2rem; text-decoration: none; }
 
-            /* Language switcher (flags) */
-            .navbar { position: relative; }
-            .lang-switcher {
-                position: absolute;
-                right: 12px;
-                top: 8px;
-                display: flex;
-                gap: 8px;
-                align-items: center;
-                z-index: 1200;
-            }
-            .lang-switcher .lang-link { font-size: 20px; text-decoration: none; opacity: 0.95; }
-            .lang-switcher .lang-link:hover { transform: translateY(-1px); }
+        @media (max-width: 768px) {
+            .footer-inner { grid-template-columns: 1fr; text-align: center; }
+            .socials-icons { justify-content: center; }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/" data-i18n="nav.home">{{ 'nav.home'|trans }}</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="/">{{ 'nav.home'|trans }}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarColor02">
+            
+            <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/cv" data-i18n="nav.cv">{{ 'nav.cv'|trans }}
-                            <span class="visually-hidden">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/realisations" data-i18n="nav.realisations">{{ 'nav.realisations'|trans }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/loisirs" data-i18n="nav.loisirs">{{ 'nav.loisirs'|trans }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Contact" data-i18n="nav.contact">{{ 'nav.contact'|trans }}</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/cv">{{ 'nav.cv'|trans }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/realisations">{{ 'nav.realisations'|trans }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/loisirs">{{ 'nav.loisirs'|trans }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Contact">{{ 'nav.contact'|trans }}</a></li>
                 </ul>
-            </div>
-            {% set _current_route = app.request.attributes.get('_route') ?? null %}
-            {% set _current_route_params = app.request.attributes.get('_route_params')|default({}) %}
-            <div class="lang-switcher" aria-label="Choisir la langue">
-                <a class="lang-link" data-locale="fr" href="{{ _current_route ? path(_current_route, _current_route_params|merge({'_locale':'fr'})) : app.request.pathinfo ~ '?_locale=fr' }}" title="Français" aria-label="Français">🇫🇷</a>
-                <a class="lang-link" data-locale="en" href="{{ _current_route ? path(_current_route, _current_route_params|merge({'_locale':'en'})) : app.request.pathinfo ~ '?_locale=en' }}" title="English" aria-label="English">🇬🇧</a>
+                
+                {# Switcher de langue intelligent #}
+                <div class="lang-switcher">
+                    <a class="lang-link" href="{{ path(app.request.attributes.get('_route') ?: 'app_home', app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}" title="Français">🇫🇷</a>
+                    <a class="lang-link" href="{{ path(app.request.attributes.get('_route') ?: 'app_home', app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}" title="English">🇬🇧</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="content">
+    <main class="content">
         {% block body %}{% endblock %}
-    </div>
-    <footer class="footer-custom" role="contentinfo">
+    </main>
+
+    <footer class="footer-custom">
         <div class="footer-inner">
-            <div class="footer-col contact">
-                <h4 data-i18n="footer.contact_title">{{ 'footer.contact_title'|trans }}</h4>
+            <div class="footer-col">
+                <h4>{{ 'footer.contact_title'|trans }}</h4>
                 <a class="footer-link" href="mailto:bacotdimitri@gmail.com">bacotdimitri@gmail.com</a>
                 <a class="footer-link" href="tel:+33750575987">07 50 57 59 87</a>
-                <div style="margin-top:8px; color:rgba(255,255,255,0.85)" data-i18n="footer.available" data-i18n-params='{"city":"Roanne"}'>{{ 'footer.available'|trans({'%city%':'Roanne'}) }}</div>
+                <p class="mt-2 small">{{ 'footer.available'|trans({'%city%': 'Roanne'}) }}</p>
             </div>
-            <div class="footer-col socials"> 
-                <h4 data-i18n="footer.socials_title">{{ 'footer.socials_title'|trans }}</h4>
-                <div class="socials" aria-label="Liens sociaux">
-                    <a class="" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a class="" href="https://fr.linkedin.com/in/dimitri-bacot" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="" href="https://github.com/Dbacot" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+
+            <div class="footer-col">
+                <h4>{{ 'footer.socials_title'|trans }}</h4>
+                <div class="socials-icons">
+                    <a href="https://fr.linkedin.com/in/dimitri-bacot" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Dbacot" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="footer-col info">
-                <h4 data-i18n="footer.about_title">{{ 'footer.about_title'|trans }}</h4>
-                <p style="margin:0 0 8px;color:rgba(255,255,255,0.9)" data-i18n="footer.portfolio">Site Web de Dimitri Bacot — {{ 'footer.portfolio'|trans }}</p>
-                <small style="color:rgba(255,255,255,0.6)" data-i18n="footer.rights">© {{ "now"|date('Y') }} — {{ 'footer.rights'|trans }}</small>
+
+            <div class="footer-col">
+                <h4>{{ 'footer.about_title'|trans }}</h4>
+                <p class="small mb-1">Dimitri Bacot — {{ 'footer.portfolio'|trans }}</p>
+                <p class="small text-muted">© {{ "now"|date('Y') }} — {{ 'footer.rights'|trans }}</p>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <span data-i18n="footer.bottom">{{ 'footer.bottom'|trans }}</span>
+            {{ 'footer.bottom'|trans }}
         </div>
-        <button id="back-to-top" aria-label="Remonter en haut">↑</button>
     </footer>
 
+    <button id="back-to-top" title="Retour en haut">↑</button>
+
     <script>
-        // Back to top behavior
-        (function(){
-            var btn = document.getElementById('back-to-top');
-            if(!btn) return;
-            window.addEventListener('scroll', function(){
-                if(window.scrollY > 300) btn.style.display = 'flex'; else btn.style.display = 'none';
-            });
-            btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-        })();
+        // Gestion du bouton retour en haut
+        const btt = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            btt.style.display = window.scrollY > 300 ? 'flex' : 'none';
+        });
+        btt.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
-    <script src="/js/i18n.js"></script>
 </body>
 </html>

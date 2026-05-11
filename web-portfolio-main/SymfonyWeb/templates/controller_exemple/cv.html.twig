@@ -1,15 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ 'page.cv.title'|trans }}{% endblock %}
+{% block title %}{{ app.request.locale == 'en' ? 'page.cv.title'|trans : 'CV — Dimitri Bacot' }}{% endblock %}
 
 {% block body %}
 <main class="cv-page">
-  <header class="cv-header">
-    <div class="cv-header-inner">
-      <div class="title">
-        <h1 data-i18n="cv.name">Dimitri BACOT</h1>
-        <p class="role" data-i18n="cv.role">Assistance technicien réseau & système</p>
-      </div>
+<header class="cv-header">
+  <div class="cv-header-inner">
+    <div class="title">
+      <h1 data-i18n="cv.name">Dimitri BACOT</h1>
+      <p class="role" data-i18n="cv.role">Assistance technicien réseau & système</p>
+    </div>
+    <div class="header-right">
       <div class="contact-line">
         <span class="available" data-i18n="cv.available">Disponible à : Roanne, Mâcon</span>
         <span class="sep">•</span>
@@ -17,9 +18,12 @@
         <span class="sep">•</span>
         <a href="mailto:bacotdimitri@gmail.com">bacotdimitri@gmail.com</a>
       </div>
+      <a href="{{ asset('cv.pdf') }}" class="btn-download-cv" target="_blank">
+        <i class="fas fa-file-pdf"></i> Voir mon CV (PDF)
+      </a>
     </div>
-  </header>
-
+  </div>
+</header>
   <section class="cv-body">
       <aside class="cv-side">
       <div class="panel socials">
@@ -48,7 +52,8 @@
     <section class="cv-main">
       <div class="panel summary">
         <h3 data-i18n="cv.profile_title">Profil</h3>
-        <p data-i18n="cv.profile">Je suis à la recherche d'une alternance à partir de juillet, dans le but d'approfondir mes compétences en cybersécurité et administration systèmes. Engagé, curieux et prêt à apprendre rapidement.</p>
+        <p data-i18n="cv.profile">À la recherche d’une alternance pour mettre en pratique les compétences acquises au cours de mes formations et approfondir ma découverte du milieu professionnel.
+.</p>
       </div>
 
       <div class="panel skills">
@@ -85,10 +90,19 @@
         <h3 data-i18n="cv.education_title">Diplômes & Formations</h3>
         <ol class="timeline">
           <li>
-            <strong data-i18n="cv.education.bachelor.title">Année en cours — Bachelor en Sécurité et Cybersécurité</strong>
-            <div class="muted" data-i18n="cv.education.bachelor.school">Guardia Cybersecurity School, Roanne</div>
-            <div class="muted" data-i18n="cv.education.bachelor.dates">Septembre 2024 — Juin 2027</div>
-            <p data-i18n="cv.education.bachelor.desc">Compétences en développement, protection des infrastructures numériques et gestion des incidents.</p>
+            <strong data-i18n="cv.education.bachelor.title">Année en cours — BUT Réseaux & Télécoms</strong>
+            <div class="muted" data-i18n="cv.education.bachelor.school">IUT De ROANNE</div><p>            <p data-i18n="cv.education.bachelor.desc">Initiation aux réseaux informatiques (adressage IP, LAN, équipements
+actifs)</br>
+Sensibilisation à la cybersécurité
+</br>
+Apprentissage et recettage des liaisons cuivre
+</br>
+Bases de la programmation en python et du traitement de données
+</br>
+Projets tutorés (SAÉ) : travail en équipe, gestion de projet
+</br>
+</p></p>
+
           </li>
           <li>
             <strong data-i18n="cv.education.bac.title">Baccalauréat Général</strong>
@@ -97,6 +111,9 @@
           </li>
         </ol>
       </div>
+
+</div>
+
 
       <div class="panel experience">
         <h3 data-i18n="cv.experience_title">Expériences professionnelles</h3>
@@ -136,8 +153,8 @@
       if(role) { role.classList.add('animated-fade'); }
       if(contact) { contact.classList.add('animated-fade'); }
 
-      // panels
-      var panels = document.querySelectorAll('.cv-main .panel, .cv-side .panel');
+      // panelsmain .panel
+      var panels = document.querySelectorAll('.cv-, .cv-side .panel');
       panels.forEach(function(p, i){
         setTimeout(function(){ p.classList.add('animated-fade'); }, 120 * i + 200);
       });

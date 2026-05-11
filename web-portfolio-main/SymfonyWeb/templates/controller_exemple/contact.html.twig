@@ -1,23 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ 'page.contact.title'|trans }}{% endblock %}
+{% block title %}{{ app.request.locale == 'en' ? 'page.contact.title'|trans : 'Contactez-moi' }}{% endblock %}
 
 {% block body %}
     <section class="contact-hero">
         <div class="contact-inner">
             <div class="contact-card">
                 <div class="contact-left">
-                    <h1 data-i18n="page.contact.title">{{ 'page.contact.title'|trans }}</h1>
-                    <p class="lead" data-i18n="contact.lead">{{ 'contact.lead'|trans }}</p>
+                    <h1 data-i18n="page.contact.title">{{ app.request.locale == 'en' ? 'page.contact.title'|trans : 'Contactez-moi' }}</h1>
+                    <p class="lead" data-i18n="contact.lead">{{ app.request.locale == 'en' ? 'contact.lead'|trans : 'Pour toute question ou proposition, choisissez une des options ci‑dessous — c\'est simple et rapide.' }}</p>
 
                     <div class="cta-buttons">
-                        <a class="cta-btn" href="mailto:bacotdimitri@gmail.com" data-i18n="contact.email_button">{{ 'contact.email_button'|trans }}</a>
-                        <a class="cta-btn outline" href="tel:+33750575987" data-i18n="contact.call_button">{{ 'contact.call_button'|trans }}</a>
-                        <button class="cta-btn ghost" id="copy-email" data-i18n="contact.copy_button" data-i18n-copied="{{ 'contact.copy_copied_short'|trans }}" data-i18n-copied-text="{{ 'contact.copy_copied'|trans }}">{{ 'contact.copy_button'|trans }}</button>
+                        <a class="cta-btn" href="mailto:bacotdimitri@gmail.com" data-i18n="contact.email_button">{{ app.request.locale == 'en' ? 'contact.email_button'|trans : 'Envoyer un e‑mail' }}</a>
+                        <a class="cta-btn outline" href="tel:+33750575987" data-i18n="contact.call_button">{{ app.request.locale == 'en' ? 'contact.call_button'|trans : 'Appeler' }}</a>
+                        <button class="cta-btn ghost" id="copy-email" data-i18n="contact.copy_button" data-i18n-copied="{{ 'contact.copy_copied_short'|trans }}" data-i18n-copied-text="{{ app.request.locale == 'en' ? 'contact.copy_copied'|trans : 'Adresse e‑mail copiée.' }}">{{ app.request.locale == 'en' ? 'contact.copy_button'|trans : 'Copier l\'e‑mail' }}</button>
                     </div>
                 </div>
                 <aside class="contact-right" aria-labelledby="contact-info">
-                    <h2 id="contact-info" data-i18n="contact.details_title">{{ 'contact.details_title'|trans }}</h2>
+                    <h2 id="contact-info" data-i18n="contact.details_title">{{ app.request.locale == 'en' ? 'contact.details_title'|trans : 'Mes coordonnées' }}</h2>
                     <div class="info-block">
                         <i class="fas fa-envelope"></i>
                         <a href="mailto:bacotdimitri@gmail.com">bacotdimitri@gmail.com</a>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="info-block">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span data-i18n="contact.address">{{ 'contact.address'|trans }}</span>
+                        <span data-i18n="contact.address">{{ app.request.locale == 'en' ? 'contact.address'|trans : 'Roanne, France' }}</span>
                     </div>
 
                     <div class="socials">

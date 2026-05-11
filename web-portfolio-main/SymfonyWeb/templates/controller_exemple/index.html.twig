@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ 'page.home.title'|trans }}{% endblock %}
+{% block title %}{{ app.request.locale == 'en' ? 'page.home.title'|trans : 'Bienvenue sur mon portfolio' }}{% endblock %}
 
 {% block body %}
 {% block stylesheets %}
@@ -11,7 +11,7 @@
 .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 /* Intro card on home */
 .intro-card{ margin-top:18px; background: linear-gradient(180deg,#ffffff,#f4fbff); padding:14px 16px; border-radius:12px; box-shadow:0 8px 24px rgba(10,20,40,0.04); }
-.intro-text{ margin:0 0 10px; color:var(--muted); }
+.intro-text{ margin:0 0 10px; color:black; }
 .skill-badges{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
 .badge-skill{ background:rgba(59,130,246,0.08); color:var(--accent); padding:6px 10px; border-radius:999px; font-weight:600; font-size:0.9rem; }
 .cta-savoir{ display:inline-block; text-decoration:none; padding:10px 14px; border-radius:10px; background:linear-gradient(90deg,var(--accent),#06b6d4); color:white; font-weight:700; transition:transform .18s ease, box-shadow .18s ease; }
@@ -21,18 +21,18 @@
 <section class="hero">
     <div class="hero-inner">
         <div class="hero-left">
-            <h1 data-i18n="hero.greeting">{{ 'hero.greeting'|trans }}</h1>
-            <p class="hero-text" data-i18n="hero.description">{{ 'hero.description'|trans }}</p>
+            <h1 data-i18n="hero.greeting">{{ app.request.locale == 'en' ? 'hero.greeting'|trans : 'Bonjour, je suis étudiant en Cybersécurité & Développement' }}</h1>
+            <p class="hero-text" data-i18n="hero.description">{{ app.request.locale == 'en' ? 'hero.description'|trans : 'Je crée des projets orientés sécurité et applications web. Ici vous trouverez mon parcours, mes compétences et des projets concrets — y compris mes loisirs transformés en petits projets pratiques.' }}</p>
             <!-- Mini profil résumé + compétences rapides -->
             <div class="intro-card">
-                <p class="intro-text" data-i18n="intro.text" data-i18n-params='{"name":"Dimitri"}'>{{ 'intro.text'|trans({'%name%':'Dimitri'}) }}</p>
+                <p class="intro-text" data-i18n="intro.text" data-i18n-params='{"name":"Dimitri"}'>{{ app.request.locale == 'en' ? 'intro.text'|trans({'%name%':'Dimitri'}) : 'Je m\'appelle Dimitri, je développe des outils orientés sécurité, j\'aime l\'investigation numérique (OSINT/CTF) et la résolution de problèmes concrets en réseau.' }}</p>
                 <div class="skill-badges">
                     <span class="badge-skill">Python</span>
                     <span class="badge-skill">Networking</span>
                     <span class="badge-skill">Web (HTML/CSS)</span>
                     <span class="badge-skill">OSINT / CTF</span>
                 </div>
-                <a class="cta-savoir" href="/cv" data-i18n="cta.learn_more">{{ 'cta.learn_more'|trans }} →</a>
+                <a class="cta-savoir" href="/cv" data-i18n="cta.learn_more">{{ app.request.locale == 'en' ? 'cta.learn_more'|trans : 'Savoir plus' }} →</a>
             </div>
         </div>
     </div>
@@ -40,23 +40,23 @@
 
 <main class="main-content">
     <div class="conteneur1">
-        <div class="minicont1" data-i18n="reasons.title">{{ 'reasons.title'|trans }}</div>
-        <div class="minicont1" data-i18n="reasons.description">{{ 'reasons.description'|trans }}</div>
+        <div class="minicont1" data-i18n="reasons.title">{{ app.request.locale == 'en' ? 'reasons.title'|trans : 'Mes raisons de suivre cette voie' }}</div>
+        <div class="minicont1" data-i18n="reasons.description">{{ app.request.locale == 'en' ? 'reasons.description'|trans : 'Je suis quelqu\'un de très curieux, le numérique j\'y touche depuis tout petit donc ça m\'a favorisé sur cette voie' }}</div>
     </div>
 
     <!-- Section Projets & SAE fusionnée -->
     <section id="realisations" class="realisations">
-        <h2 data-i18n="projects.title">{{ 'projects.title'|trans }}</h2>
-        <p class="realisations-intro" data-i18n="projects.intro">{{ 'projects.intro'|trans }}</p>
+        <h2 data-i18n="projects.title">{{ app.request.locale == 'en' ? 'projects.title'|trans : 'Mes Projets & SAE' }}</h2>
+        <p class="realisations-intro" data-i18n="projects.intro">{{ app.request.locale == 'en' ? 'projects.intro'|trans : 'Découvrez mes réalisations concrètes, qu\'elles soient issues de projets personnels, scolaires ou de situations d\'apprentissage (SAE).' }}</p>
         <div class="realisations-explore">
-            <a class="a real-explore-btn" href="/realisations"><span data-i18n="projects.explore_all">{{ 'projects.explore_all'|trans }}</span><div class="wave"></div></a>
+            <a class="a real-explore-btn" href="/realisations"><span data-i18n="projects.explore_all">{{ app.request.locale == 'en' ? 'projects.explore_all'|trans : 'Tout explorer' }}</span><div class="wave"></div></a>
         </div>
         <div class="realisations-grid">
             <article class="real-card sae">
                 <img src="{{ asset('mooc.jpg') }}" alt="SAE1.01 : Hygiène informatique & cybersécurité" />
                 <div class="real-body">
-                        <h3 data-i18n="sae.sae101.title">{{ 'sae.sae101.title'|trans }} <span class="badge badge-sae">SAE</span></h3>
-                        <p data-i18n="sae.sae101.desc">{{ 'sae.sae101.desc'|trans }}</p>
+                        <h3 data-i18n="sae.sae101.title">{{ app.request.locale == 'en' ? 'sae.sae101.title'|trans : 'SAE1.01 : Hygiène informatique & cybersécurité' }} <span class="badge badge-sae">SAE</span></h3>
+                        <p data-i18n="sae.sae101.desc">{{ app.request.locale == 'en' ? 'sae.sae101.desc'|trans : 'MOOC ANSSI, diaporama sur les vulnérabilités, présentation orale. Sensibilisation aux risques et enjeux de la cybersécurité.' }}</p>
                 </div>
                 <a class="real-overlay" href="/realisations" aria-label="Voir le détail sur la page dédiée">
                     <span class="overlay-icon"><i class="fas fa-search-plus"></i></span>
@@ -64,10 +64,10 @@
                 </a>
             </article>
             <article class="real-card sae">
-                <img src="{{ asset('/f3.png') }}" alt="SAE12 : S'initier aux réseaux informatiques" />
+                <img src="{{ asset('/f3.png') }}" alt="SAE1.02 : S'initier aux réseaux informatiques" />
                 <div class="real-body">
-                    <h3 data-i18n="sae.sae12.title">{{ 'sae.sae12.title'|trans }} <span class="badge badge-sae">SAE</span></h3>
-                    <p data-i18n="sae.sae12.desc">{{ 'sae.sae12.desc'|trans }}</p>
+                    <h3 data-i18n="sae.sae12.title">{{ app.request.locale == 'fr' ? 'sae.sae12.title'|trans : 'SAE 1.02 : S\'initier aux réseaux informatiques' }} <span class="badge badge-sae">SAE</span></h3>
+                    <p data-i18n="sae.sae12.desc">{{ app.request.locale == 'fr' ? 'sae.sae12.desc'|trans : 'Découverte des réseaux, configuration IP et protocoles de base.' }}</p>
                 </div>
                 <a class="real-overlay" href="/realisations" aria-label="Voir le détail sur la page dédiée">
                     <span class="overlay-icon"><i class="fas fa-search-plus"></i></span>
@@ -77,8 +77,8 @@
             <article class="real-card sae">
                 <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="SAE Portfolio Web" />
                 <div class="real-body">
-                    <h3 data-i18n="sae.portfolio.title">{{ 'sae.portfolio.title'|trans }} <span class="badge badge-sae">SAE</span></h3>
-                    <p data-i18n="sae.portfolio.desc">{{ 'sae.portfolio.desc'|trans }}</p>
+                    <h3 data-i18n="sae.portfolio.title">{{ app.request.locale == 'en' ? 'sae.portfolio.title'|trans : 'SAE Portfolio Web personnel' }} <span class="badge badge-sae">SAE</span></h3>
+                    <p data-i18n="sae.portfolio.desc">{{ app.request.locale == 'en' ? 'sae.portfolio.desc'|trans : 'Conception, développement et mise en ligne d’un portfolio web pour présenter mon parcours, mes compétences et mes projets.' }}</p>
                 </div>
                 <a class="real-overlay" href="/realisations" aria-label="Voir le détail sur la page dédiée">
                     <span class="overlay-icon"><i class="fas fa-search-plus"></i></span>
@@ -95,27 +95,27 @@
 
     <!-- Section Mes loisirs -->
     <section id="loisirs" class="loisirs-cours">
-        <h2 data-i18n="hobbies.title">{{ 'hobbies.title'|trans }}</h2>
+        <h2 data-i18n="hobbies.title">{{ app.request.locale == 'en' ? 'hobbies.title'|trans : 'Mes loisirs' }}</h2>
         <div class="loisirs-grid">
             <article class="loisir-card">
                 <img src="{{ asset('rdr2.jpg') }}" alt="Gaming" />
                 <div class="loisir-body">
-                    <h3 data-i18n="hobby.gaming.title">{{ 'hobby.gaming.title'|trans }}</h3>
-                    <p data-i18n="hobby.gaming.desc">{{ 'hobby.gaming.desc'|trans }}</p>
+                    <h3 data-i18n="hobby.gaming.title">{{ app.request.locale == 'en' ? 'hobby.gaming.title'|trans : 'Gaming' }}</h3>
+                    <p data-i18n="hobby.gaming.desc">{{ app.request.locale == 'en' ? 'hobby.gaming.desc'|trans : 'Je joue à des jeux vidéo pour me détendre et découvrir de nouveaux univers.' }}</p>
                 </div>
             </article>
             <article class="loisir-card">
                 <img src="{{ asset('osintctf.png') }}" alt="CTF / OSINT" />
                 <div class="loisir-body">
-                    <h3 data-i18n="hobby.ctf.title">{{ 'hobby.ctf.title'|trans }}</h3>
-                    <p data-i18n="hobby.ctf.desc">{{ 'hobby.ctf.desc'|trans }}</p>
+                    <h3 data-i18n="hobby.ctf.title">{{ app.request.locale == 'en' ? 'hobby.ctf.title'|trans : 'CTF / OSINT' }}</h3>
+                    <p data-i18n="hobby.ctf.desc">{{ app.request.locale == 'en' ? 'hobby.ctf.desc'|trans : 'Je participe à des challenges de cybersécurité et d\'investigation numérique pour le plaisir.' }}</p>
                 </div>
             </article>
             <article class="loisir-card">
                 <img src="{{ asset('telephone.webp') }}" alt="Réparation téléphone" />
                 <div class="loisir-body">
-                    <h3 data-i18n="hobby.repair.title">{{ 'hobby.repair.title'|trans }}</h3>
-                    <p data-i18n="hobby.repair.desc">{{ 'hobby.repair.desc'|trans }}</p>
+                    <h3 data-i18n="hobby.repair.title">{{ app.request.locale == 'en' ? 'hobby.repair.title'|trans : 'Réparation' }}</h3>
+                    <p data-i18n="hobby.repair.desc">{{ app.request.locale == 'en' ? 'hobby.repair.desc'|trans : 'J\'aime démonter et réparer des objets électroniques pour comprendre leur fonctionnement.' }}</p>
                 </div>
             </article>
         </div>
@@ -127,7 +127,7 @@
 <script src="{{ asset('build/app.js') }}"></script>
     <div class="contparc">
     <div class="miniparc1">
-    <h4 data-i18n="education.title">{{ 'education.title'|trans }}</h4>
+    <h4 data-i18n="education.title">{{ app.request.locale == 'en' ? 'education.title'|trans : 'Mon parcours Scolaire' }}</h4>
     </div>
 
 <div class="miniparc1">

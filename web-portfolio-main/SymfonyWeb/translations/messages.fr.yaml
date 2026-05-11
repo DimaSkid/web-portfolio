@@ -20,7 +20,7 @@ hero:
   description: "Je crée des projets orientés sécurité et applications web. Ici vous trouverez mon parcours, mes compétences et des projets concrets — y compris mes loisirs transformés en petits projets pratiques."
 
 intro:
-  text: "Je m'appelle %name%, je développe des outils orientés sécurité, j'aime l'investigation numérique (OSINT/CTF) et la résolution de problèmes concrets en réseau."
+  text: "Je m'appelle Dimitri, je développe des outils orientés sécurité, j'aime l'investigation numérique (OSINT/CTF) et la résolution de problèmes concrets en réseau."
 
 cta:
   learn_more: "Savoir plus"
@@ -43,9 +43,9 @@ sae:
     li2: "Travail en autonomie"
     li3: "Exemples d'attaques réelles étudiées"
   sae12:
-    title: "SAE12 : S'initier aux réseaux informatiques"
-    desc: "Découverte des bases du réseau, configuration IP, manipulation de matériel et protocoles essentiels."
-    long: "Premiers pas dans la configuration réseau, matériel et protocoles essentiels."
+    title: "SAE 1.02 : S'initier aux réseaux informatiques"
+    desc: "Découverte des réseaux, configuration IP et protocoles de base."
+    long: "Introduction simple aux réseaux, à la configuration et au matériel réseau."
     li1: "Manipulation de switchs et routeurs"
     li2: "Travail en binôme"
   portfolio:

@@ -43,9 +43,9 @@ sae:
     li2: "Independent work"
     li3: "Examples of real attacks studied"
   sae12:
-    title: "SAE12: Intro to Computer Networks"
-    desc: "Discovering networking basics, IP configuration, hardware handling and essential protocols."
-    long: "Introductory work on network configuration, hardware and essential protocols."
+    title: "SAE 1.02: Intro to Computer Networks"
+    desc: "Discover networking basics, IP configuration and core protocols."
+    long: "Simple introduction to networks, configuration and network hardware."
     li1: "Handling switches and routers"
     li2: "Paired work"
   portfolio:

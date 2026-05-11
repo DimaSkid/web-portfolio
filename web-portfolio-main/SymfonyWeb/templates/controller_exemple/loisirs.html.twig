@@ -4,51 +4,51 @@
 
 {% block body %}
 <section class="loisirs-page-art">
-    <h1 class="loisirs-art-title" data-i18n="loisirs.title">{{ 'loisirs.title'|trans }} <span class="art-dot">•</span></h1>
-        <p class="loisirs-art-intro" data-i18n="loisirs.intro">{{ 'loisirs.intro'|trans }}</p>
+    <h1 class="loisirs-art-title" data-i18n="loisirs.title">{{ app.request.locale == 'en' ? 'loisirs.title'|trans : 'Mes Loisirs' }} <span class="art-dot">•</span></h1>
+        <p class="loisirs-art-intro" data-i18n="loisirs.intro">{{ app.request.locale == 'en' ? 'loisirs.intro'|trans : 'Laissez-vous inspirer par mes passions, entre créativité numérique, bidouillage et esprit de jeu !' }}</p>
     <div class="loisirs-art-grid">
         <article class="loisir-art-card">
             <img src="{{ asset('rdr2.jpg') }}" alt="Gaming" />
             <div class="loisir-art-overlay">
                 <span class="loisir-art-icon"><i class="fas fa-gamepad"></i></span>
-                <span class="loisir-art-text" data-i18n="loisirs.gaming.overlay">{{ 'loisirs.gaming.overlay'|trans }}</span>
+                <span class="loisir-art-text" data-i18n="loisirs.gaming.overlay">{{ app.request.locale == 'en' ? 'loisirs.gaming.overlay'|trans : 'Univers immersifs, compétition, stratégie et fun !' }}</span>
             </div>
             <div class="loisir-art-body">
-                <h3 data-i18n="loisirs.gaming.title">{{ 'loisirs.gaming.title'|trans }}</h3>
-                <p data-i18n="loisirs.gaming.desc">{{ 'loisirs.gaming.desc'|trans }}</p>
+                <h3 data-i18n="loisirs.gaming.title">{{ app.request.locale == 'en' ? 'loisirs.gaming.title'|trans : 'Gaming' }}</h3>
+                <p data-i18n="loisirs.gaming.desc">{{ app.request.locale == 'en' ? 'loisirs.gaming.desc'|trans : 'Jeux vidéo, e-sport, exploration de mondes ouverts et création de mods.' }}</p>
             </div>
         </article>
         <article class="loisir-art-card">
             <img src="{{ asset('osintctf.png') }}" alt="CTF / OSINT" />
             <div class="loisir-art-overlay">
                 <span class="loisir-art-icon"><i class="fas fa-user-secret"></i></span>
-                <span class="loisir-art-text" data-i18n="loisirs.ctf.overlay">{{ 'loisirs.ctf.overlay'|trans }}</span>
+                <span class="loisir-art-text" data-i18n="loisirs.ctf.overlay">{{ app.request.locale == 'en' ? 'loisirs.ctf.overlay'|trans : 'Défis, énigmes, investigation et cybersécurité !' }}</span>
             </div>
             <div class="loisir-art-body">
-                <h3 data-i18n="loisirs.ctf.title">{{ 'loisirs.ctf.title'|trans }}</h3>
-                <p data-i18n="loisirs.ctf.desc">{{ 'loisirs.ctf.desc'|trans }}</p>
+                <h3 data-i18n="loisirs.ctf.title">{{ app.request.locale == 'en' ? 'loisirs.ctf.title'|trans : 'CTF / OSINT' }}</h3>
+                <p data-i18n="loisirs.ctf.desc">{{ app.request.locale == 'en' ? 'loisirs.ctf.desc'|trans : 'Challenges de cybersécurité, chasse aux indices et résolution d’énigmes numériques.' }}</p>
             </div>
         </article>
         <article class="loisir-art-card">
             <img src="{{ asset('telephone.webp') }}" alt="Réparation" />
             <div class="loisir-art-overlay">
                 <span class="loisir-art-icon"><i class="fas fa-tools"></i></span>
-                <span class="loisir-art-text" data-i18n="loisirs.repair.overlay">{{ 'loisirs.repair.overlay'|trans }}</span>
+                <span class="loisir-art-text" data-i18n="loisirs.repair.overlay">{{ app.request.locale == 'en' ? 'loisirs.repair.overlay'|trans : 'Démontage, réparation, upcycling et curiosité !' }}</span>
             </div>
             <div class="loisir-art-body">
-                <h3 data-i18n="loisirs.repair.title">{{ 'loisirs.repair.title'|trans }}</h3>
-                <p data-i18n="loisirs.repair.desc">{{ 'loisirs.repair.desc'|trans }}</p>
+                <h3 data-i18n="loisirs.repair.title">{{ app.request.locale == 'en' ? 'loisirs.repair.title'|trans : 'Réparation' }}</h3>
+                <p data-i18n="loisirs.repair.desc">{{ app.request.locale == 'en' ? 'loisirs.repair.desc'|trans : 'Bidouillage d’objets électroniques, micro-soudure et prolongation de vie des appareils.' }}</p>
             </div>
         </article>
         <article class="loisir-art-card">
             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Développement" />
             <div class="loisir-art-overlay">
                 <span class="loisir-art-icon"><i class="fas fa-code"></i></span>
-                <span class="loisir-art-text" data-i18n="loisirs.dev.overlay">{{ 'loisirs.dev.overlay'|trans }}</span>
+                <span class="loisir-art-text" data-i18n="loisirs.dev.overlay">{{ app.request.locale == 'en' ? 'loisirs.dev.overlay'|trans : 'Création, innovation, code et design !' }}</span>
             </div>
             <div class="loisir-art-body">
-                    <h3 data-i18n="loisirs.dev.title">{{ 'loisirs.dev.title'|trans }}</h3>
-                    <p data-i18n="loisirs.dev.desc">{{ 'loisirs.dev.desc'|trans }}</p>
+                    <h3 data-i18n="loisirs.dev.title">{{ app.request.locale == 'en' ? 'loisirs.dev.title'|trans : 'Développement' }}</h3>
+                    <p data-i18n="loisirs.dev.desc">{{ app.request.locale == 'en' ? 'loisirs.dev.desc'|trans : 'Programmation créative, projets web, bots, scripts et design d’interfaces.' }}</p>
             </div>
         </article>
     </div>

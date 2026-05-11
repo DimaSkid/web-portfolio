@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ 'page.realisations.title'|trans }}{% endblock %}
+{% block title %}{{ app.request.locale == 'en' ? 'page.realisations.title'|trans : 'Toutes mes réalisations' }}{% endblock %}
 
 {% block body %}
 <section class="realisations">
-    <h1 data-i18n="page.realisations.title">{{ 'page.realisations.title'|trans }}</h1>
-    <p class="realisations-intro" data-i18n="realisations.intro">{{ 'realisations.intro'|trans }}</p>
+    <h1 data-i18n="page.realisations.title">{{ app.request.locale == 'en' ? 'page.realisations.title'|trans : 'Toutes mes réalisations' }}</h1>
+    <p class="realisations-intro" data-i18n="realisations.intro">{{ app.request.locale == 'en' ? 'realisations.intro'|trans : 'Retrouvez ici l\'ensemble de mes projets et SAE, avec plus de détails, d\'exemples et de contexte sur chaque expérience.' }}</p>
 
     <!-- RT1 : Administrer les réseaux et l'Internet -->
     <section class="rt-section">
@@ -22,12 +22,12 @@
             <article class="real-card sae">
                 <img src="{{ asset('mooc.jpg') }}" alt="SAE1.01 : Hygiène informatique & cybersécurité" />
                 <div class="real-body">
-                    <h3 data-i18n="sae.sae101.title">{{ 'sae.sae101.title'|trans }}</h3>
-                    <p data-i18n="sae.sae101.long">{{ 'sae.sae101.long'|trans }}</p>
+                    <h3 data-i18n="sae.sae101.title">{{ app.request.locale == 'en' ? 'sae.sae101.title'|trans : 'SAE1.01 : Hygiène informatique & cybersécurité' }}</h3>
+                    <p data-i18n="sae.sae101.long">{{ app.request.locale == 'en' ? 'sae.sae101.long'|trans : 'Contexte, livrables, outils et compétences liés au MOOC ANSSI et aux travaux associés.' }}</p>
                     <ul>
-                        <li data-i18n="sae.sae101.li1">{{ 'sae.sae101.li1'|trans }}</li>
-                        <li data-i18n="sae.sae101.li2">{{ 'sae.sae101.li2'|trans }}</li>
-                        <li data-i18n="sae.sae101.li3">{{ 'sae.sae101.li3'|trans }}</li>
+                        <li data-i18n="sae.sae101.li1">{{ app.request.locale == 'en' ? 'sae.sae101.li1'|trans : 'Présentation orale devant la classe' }}</li>
+                        <li data-i18n="sae.sae101.li2">{{ app.request.locale == 'en' ? 'sae.sae101.li2'|trans : 'Travail en autonomie' }}</li>
+                        <li data-i18n="sae.sae101.li3">{{ app.request.locale == 'en' ? 'sae.sae101.li3'|trans : 'Exemples d\'attaques réelles étudiées' }}</li>
                     </ul>
                 </div>
             </article>
@@ -35,11 +35,11 @@
                 <div class="ac-project-badge">AC11.03</div>
                 <img src="{{ asset('/f3.png') }}" alt="SAE 1.02 : S'initier aux réseaux informatiques" />
                 <div class="real-body">
-                    <h3 data-i18n="sae.sae12.title">{{ 'sae.sae12.title'|trans }}</h3>
-                    <p data-i18n="sae.sae12.long">{{ 'sae.sae12.long'|trans }}</p>
+                    <h3 data-i18n="sae.sae12.title">{{ app.request.locale == 'en' ? 'sae.sae12.title'|trans : 'SAE 1.02 : S\'initier aux réseaux informatiques' }}</h3>
+                    <p data-i18n="sae.sae12.long">{{ app.request.locale == 'en' ? 'sae.sae12.long'|trans : 'Introduction simple aux réseaux, à la configuration et au matériel réseau.' }}</p>
                     <ul>
-                        <li data-i18n="sae.sae12.li1">{{ 'sae.sae12.li1'|trans }}</li>
-                        <li data-i18n="sae.sae12.li2">{{ 'sae.sae12.li2'|trans }}</li>
+                        <li data-i18n="sae.sae12.li1">{{ app.request.locale == 'en' ? 'sae.sae12.li1'|trans : 'Manipulation de switchs et routeurs' }}</li>
+                        <li data-i18n="sae.sae12.li2">{{ app.request.locale == 'en' ? 'sae.sae12.li2'|trans : 'Travail en binôme' }}</li>
                     </ul>
                     <div class="button-group">
                         <a href="https://docs.google.com/document/d/1OBp6XYTMGKqmeOd2xbsxBgNtFLgb7y2aFyC8KnAZUkE/edit?usp=sharing" class="btn btn-primary">Document preuve</a>
